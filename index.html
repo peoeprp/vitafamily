@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru" class="is-loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>vita family — рестораны Санкт-Петербурга</title>
+  <meta name="description" content="Семья ресторанов Famiglia: Casa Pasta и Bodega Sol.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ПРЕЛОАДЕР -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__word"><span style="--i:0">v</span><span style="--i:1">i</span><span style="--i:2">t</span><span style="--i:3">a</span><span style="--i:4">&nbsp;</span><span style="--i:5">f</span><span style="--i:6">a</span><span style="--i:7">m</span><span style="--i:8">i</span><span style="--i:9">l</span><span style="--i:10">y</span></div>
+      <div class="preloader__line"><i></i></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <a href="index.html" class="logo">vita family</a>
+    <nav class="nav">
+      <a href="#restaurants">Рестораны</a>
+      <!-- <a href="#vacancies">Вакансии</a> -->
+      <!-- <a href="#contacts">Контакты</a> -->
+    </nav>
+    <button class="burger" aria-label="Меню">☰</button>
+  </header>
+
+  <!-- Плашки ресторанов: слайдер на десктопе, столбик на мобильном -->
+  <main id="restaurants" class="slider">
+    <div class="tiles" id="tilesTrack">
+      <a href="leskoff.html" class="tile">
+        <div class="tile__bg" style="--img: url('img/leskoff/tile.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+        <div class="tile__content">
+          <div class="tile__city">Санкт-Петербург</div>
+          <h2 class="tile__name">ЛЕСkoff</h2>
+          <span class="tile__more">Перейти</span>
+        </div>
+      </a>
+      <a href="provence.html" class="tile">
+        <div class="tile__bg" style="--img: url('img/provence/presidium.jpg'), linear-gradient(135deg,#b9a6d3,#7A5C9E)"></div>
+        <div class="tile__content">
+          <div class="tile__city">Санкт-Петербург · банкетный зал</div>
+          <h2 class="tile__name">Provence</h2>
+          <span class="tile__more">Перейти</span>
+        </div>
+      </a>
+      <a href="bazar.html" class="tile tile--bazar">
+        <div class="tile__bg" style="--img: repeating-linear-gradient(0deg, rgba(255,255,255,.4) 0 1px, transparent 1px 110px), repeating-linear-gradient(90deg, rgba(255,255,255,.4) 0 1px, transparent 1px 110px), linear-gradient(#C71B0F, #C71B0F)"></div>
+        <div class="tile__content">
+          <div class="tile__city">Санкт-Петербург · shawarma spot</div>
+          <h2 class="tile__name tile__name--brush">BAZAR</h2>
+          <span class="tile__more">Перейти</span>
+        </div>
+      </a>
+    </div>
+    <button class="slider__arrow slider__arrow--prev" aria-label="Назад">←</button>
+    <button class="slider__arrow slider__arrow--next" aria-label="Вперёд">→</button>
+    <div class="slider__ui">
+      <div class="slider__counter"><b>01</b> / 03</div>
+      <div class="slider__dots"></div>
+    </div>
+  </main>
+
+<!--   <section id="vacancies" class="section">
+    <div class="container split reveal">
+      <div>
+        <div class="eyebrow">Команда</div>
+        <h2 class="h2">Вакансии</h2>
+      </div>
+      <div class="text">
+        <p class="muted">Мы ищем поваров, официантов, барменов и хостес, которые любят гостей так же, как мы. Опыт приветствуется, но главное — желание расти вместе с семьёй ресторанов.</p>
+        <a href="mailto:job@famiglia.example" class="btn btn--dark">Отправить резюме</a>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ПОДВАЛ (общий для всех страниц) -->
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--4">
+        <div>
+          <h4><a href="leskoff.html" class="footer__title">Leckoff <span>→</span></a></h4>
+          <p>Кафе · Санкт-Петербург</p>
+          <p>ул. Фурштатская, 50</p>
+          <p class="footer__phone"><a href="tel:+79218066517">+7 (921) 806-65-17</a></p>
+          <p><a href="https://t.me/Cafe_Leskoff" target="_blank" rel="noopener">Telegram @Cafe_Leskoff</a></p>
+          <p><a href="https://instagram.com/cafe_leskoff" target="_blank" rel="noopener">@cafe_leskoff<sup>*</sup></a></p>
+        </div>
+        <div>
+          <h4><a href="provence.html" class="footer__title">Provence <span>→</span></a></h4>
+          <p>Банкетный ресторан · Санкт-Петербург</p>
+          <p>ул. Моисеенко, 8/1</p>
+          <p class="footer__phone"><a href="tel:+79219966517">+7 (921) 996-65-17</a></p>
+          <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
+        </div>
+        <div>
+          <h4><a href="bazar.html" class="footer__title">Bazar <span>→</span></a></h4>
+          <p>Shawarma spot · Санкт-Петербург</p>
+          <p>ул. Моисеенко, 8/1А</p>
+          <p>вход левее главного входа в Provence</p>
+          <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
+        </div>
+        <div>
+          <h4>Мы в соцсетях</h4>
+          <p><a href="https://instagram.com/cafe_leskoff" target="_blank" rel="noopener">@cafe_leskoff<sup>*</sup></a></p>
+          <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
+          <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
+          <p><a href="https://instagram.com/vita_lika" target="_blank" rel="noopener">@vita_lika<sup>*</sup></a></p>
+          <p class="footer__gap"><a href="https://vk.ru/provencebanket" target="_blank" rel="noopener">ВК: provencebanket</a></p>
+          <p><a href="https://vk.ru/dvorec_brakosochetaniya_furshet" target="_blank" rel="noopener">ВК: dvorec_brakosochetaniya_furshet</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+      <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>
+    </div>
+  </footer>
+
+  <div class="cookie">
+    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="#">обработкой персональных данных</a>.</span>
+    <button class="btn btn--dark">Соглашаюсь</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

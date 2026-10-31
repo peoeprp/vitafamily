@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="ru" class="is-loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leckoff — Санкт-Петербург</title>
+  <meta name="description" content="Leckoff — кафе на Фурштатской, 50: завтраки весь день, римская пицца, кофе и домашние лимонады. Банкеты и фуршеты.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-leckoff">
+  <!-- ПРЕЛОАДЕР -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__word"><span style="--i:0">v</span><span style="--i:1">i</span><span style="--i:2">t</span><span style="--i:3">a</span><span style="--i:4">&nbsp;</span><span style="--i:5">f</span><span style="--i:6">a</span><span style="--i:7">m</span><span style="--i:8">i</span><span style="--i:9">l</span><span style="--i:10">y</span></div>
+      <div class="preloader__line"><i></i></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <a href="index.html" class="logo">vita family</a>
+    <nav class="nav">
+      <a href="index.html">Все рестораны</a>
+      <a href="#menu">Меню</a>
+      <!-- <a href="#" data-open="booking">Резерв</a> -->
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <button class="burger" aria-label="Меню">☰</button>
+  </header>
+
+  <!-- HERO: лес в центре города -->
+  <section class="lk-hero">
+    <svg class="lk-hero__curve" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 640 C 260 520, 380 900, 700 760 S 1180 260, 1500 380" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M980 -40 C 900 160, 1240 220, 1180 420" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+    <div class="container lk-hero__grid">
+      <div class="lk-hero__text">
+        <div class="lk-kicker">кафе · Санкт-Петербург</div>
+        <h1 class="lk-logo">ЛЕС<span class="lk-logo__script">koff</span></h1>
+        <p class="lk-hero__lead">Тихое место на Фурштатской, где завтракают весь день, едят римскую пиццу и греются брусничным чаем.</p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--fill" data-open="menuModal">Меню</a>
+          <a href="#" class="btn btn--dark" data-open="barModal">Напитки</a>
+        </div>
+      </div>
+      <div class="lk-hero__media">
+        <div class="lk-arch" style="--img: url('img/leskoff/hero-table.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+        <svg class="lk-leaf" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 118 C30 80 30 40 30 4" fill="none" stroke="currentColor" stroke-width="1.4"/>
+<g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M30 96 C18 92 10 84 8 72 C20 74 28 82 30 96Z"/><path d="M30 80 C42 76 50 68 52 56 C40 58 32 66 30 80Z"/><path d="M30 62 C18 58 12 50 10 40 C22 42 28 50 30 62Z"/><path d="M30 44 C40 40 46 32 48 22 C38 24 32 32 30 44Z"/><path d="M30 26 C22 22 18 16 18 8 C26 10 30 16 30 26Z"/></g></svg>
+      </div>
+    </div>
+    <div class="container lk-hero__info">
+      <div><b>Адрес</b>ул. Фурштатская, 50</div>
+      <div><b>Часы работы</b>Пн–Вс: 10:00–22:00</div>
+      <div><b>Завтраки</b>Ежедневно весь день для вас!</div>
+      <div><b>Телефон</b><a href="tel:+79218066517">+7 (921) 806-65-17</a></div>
+    </div>
+  </section>
+
+  <!-- Якорное подменю -->
+  <nav class="subnav">
+    <ul>
+      <li><a href="#about">О кафе</a></li>
+      <li><a href="#menu">Меню</a></li>
+      <li><a href="#bar">Напитки</a></li>
+      <li><a href="#events">Новости</a></li>
+      <li><a href="#private">Private events</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <!-- О КАФЕ -->
+  <section id="about" class="section">
+    <div class="container lk-about reveal">
+      <div>
+        <div class="eyebrow">О кафе</div>
+        <h2 class="h2">Лес<br>в центре города</h2>
+      </div>
+      <div class="lk-about__text">
+        <p>Leckoff — небольшое кафе на Фурштатской, одной из самых зелёных улиц Петербурга. Тёплое дерево, живые цветы, свечи и мягкий свет — сюда приходят позавтракать без спешки, встретиться с друзьями или отметить праздник в узком кругу.</p>
+        <p>Готовит та же команда шефа, что и банкетный ресторан Provence: понятная домашняя кухня в аккуратной подаче — от сырников и шакшуки до утиной ножки с грушей.</p>
+      </div>
+    </div>
+    <div class="container lk-pillars reveal">
+      <div class="lk-pillar"><span class="lk-pillar__n">01</span><b>Завтраки весь день</b><p>Конструктор завтраков, русский завтрак с щучьей икрой, сырники и каши.</p></div>
+      <div class="lk-pillar"><span class="lk-pillar__n">02</span><b>Римская пицца</b><p>Прямоугольная, 25 × 20 см, на хрустящем тесте — от «Маргариты» до груши с горгондзолой.</p></div>
+      <div class="lk-pillar"><span class="lk-pillar__n">03</span><b>Гостиная до 16 гостей</b><p>Для дней рождения, девичников и семейных ужинов. Фуршет — до 60 гостей.</p></div>
+    </div>
+  </section>
+
+  <!-- МЕНЮ -->
+  <section id="menu" class="section">
+    <div class="container split reveal">
+      <div class="split__media lk-arch-media" style="--img: url('img/leskoff/menu-food.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+      <div class="text">
+        <div class="eyebrow">Кухня</div>
+        <h2 class="h2">Меню</h2>
+        <p class="muted">Завтраки подаём весь день: конструктор из омлета, яичницы или скрэмбла с любимыми топпингами, сырники, каши, шакшука и русский завтрак на двоих с щучьей икрой.</p>
+        <p class="muted">А ещё — римская пицца на хрустящем тесте, супы, паста, салаты и горячее: от борща с белорусским салом до утиной ножки с грушей.</p>
+        <a href="#" class="btn btn--dark" data-open="menuModal">Смотреть меню</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- НАПИТКИ -->
+  <section id="bar" class="section section--dark">
+    <div class="container split split--rev reveal">
+      <div class="split__media lk-arch-media" style="--img: url('img/leskoff/bar-table.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+      <div class="text">
+        <div class="eyebrow">Напитки</div>
+        <h2 class="h2">Бар</h2>
+        <p class="muted">Фирменный кофе Leckoff и лавандовый раф, брусничный чай с апельсином и розмарином, облепиховый пунш и домашние лимонады — от лайм-ванили до вишни с лаймом.</p>
+        <p class="muted">Вечером — игристое и вино, спритц и домашние настойки: брусничная, облепиховая, хреновуха.</p>
+        <a href="#" class="btn" data-open="barModal">Смотреть барную карту</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- НОВОСТИ: слайдер -->
+  <section id="events" class="section lk-news-sec">
+    <div class="container">
+      <div class="news__head reveal">
+        <div>
+          <div class="eyebrow">Новости и события</div>
+          <h2 class="h2">Что нового<br>в Leckoff</h2>
+        </div>
+        <div class="news__nav">
+          <span class="news__count"><b>01</b> / 03</span>
+          <button class="news__arrow" data-dir="-1" aria-label="Предыдущая новость">←</button>
+          <button class="news__arrow" data-dir="1" aria-label="Следующая новость">→</button>
+        </div>
+      </div>
+      <div class="news reveal" data-autoplay="7000">
+        <div class="news__track">
+        <article class="news__slide">
+          <div class="news__media lk-arch lk-arch--sm" style="--img: url('img/leskoff/news-music.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+          <div class="news__body">
+            <div class="eyebrow">Совсем скоро!</div>
+            <h3 class="news__title">Музыкальные вечера</h3>
+            <p class="muted">Живая музыка, вкусная еда и закуски от шефа. Будет шумно, вкусно и по-домашнему. Бронируйте столы заранее.</p>
+            <p class="event__meta">Условия проведения в конкретную дату уточняйте по телефону</p>
+            <div class="hero__actions"><a href="#" class="btn btn--fill" data-open="booking">Забронировать</a></div>
+          </div>
+        </article>
+        <article class="news__slide">
+          <a href="img/boxes.pdf" target="_blank" rel="noopener" class="news__media lk-arch lk-arch--sm" aria-label="Меню гастро-боксов (PDF)" style="--img: url('img/leskoff/gastro-boxes.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></a>
+          <div class="news__body">
+            <div class="eyebrow">Новое</div>
+            <h3 class="news__title">Праздничные гастро-боксы</h3>
+            <p class="muted">Салаты, канапе, брускетты и шашлычки в красивой упаковке — по предзаказу к вашему столу. Самовывоз с Фурштатской, 50 или доставка Яндекс Go. Заказ: <a href="tel:+79218066517">+7 (921) 806-65-17</a>.</p>
+            <p class="event__meta">Салаты — 2 500 ₽/кг, гастро-боксы — от 4 200 ₽</p>
+            <div class="hero__actions"><a href="img/boxes.pdf" target="_blank" rel="noopener" class="btn btn--fill">Смотреть меню боксов (PDF)</a></div>
+          </div>
+        </article>
+        <article class="news__slide">
+          <div class="news__media lk-arch lk-arch--sm" style="--img: url('img/leskoff/news-banquet.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+          <div class="news__body">
+            <div class="eyebrow">Пакетное предложение</div>
+            <h3 class="news__title">Праздник на 20 гостей</h3>
+            <p class="muted">Банкетное меню, фуршет из 40 канапе, торт, горка шампанского, живые цветы и 6 часов аренды в подарок.</p>
+            <p class="event__meta">200 000 ₽ вместо 235 000 ₽ · сервисный сбор не включён</p>
+            <div class="hero__actions"><a href="#private" class="btn btn--fill">Подробнее</a></div>
+          </div>
+        </article>
+        </div>
+        <div class="news__dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ГАЛЕРЕЯ -->
+<!--   <section class="section">
+    <div class="container">
+      <div class="gallery reveal">
+        <div style="--img: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80'), linear-gradient(#b08a66,#6b4a33)"></div>
+        <div style="--img: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'), linear-gradient(#a3754f,#5a3a2a)"></div>
+        <div style="--img: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80'), linear-gradient(#8f6a4c,#3d2a1f)"></div>
+        <div style="--img: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80'), linear-gradient(#c49b70,#7a4a2e)"></div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- PRIVATE EVENTS -->
+  <section id="private" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">Для праздников</div>
+      <h2 class="h2 reveal">Private events</h2>
+
+      <!-- Акцент: пакетное предложение -->
+      <div class="package reveal">
+        <div class="package__media" style="--img: url('img/leskoff/hall.jpg'), linear-gradient(135deg,#6b4a33,#26140C)">
+          <span class="package__badge">Выгода 35 000 ₽</span>
+        </div>
+        <div class="package__body">
+          <div class="eyebrow">Пакетное предложение</div>
+          <h3 class="package__title">Праздник<br>на 20 гостей</h3>
+          <p class="package__lead">Всё уже продумано: меню, напитки, торт, цветы, свечи и зал на 6 часов. Вам остаётся только пригласить гостей.</p>
+          <ul class="package__list">
+            <li>Банкетное меню на 20 гостей + фуршет из 40 канапе</li>
+            <li>Безлимитные лимонады, морс, чай и кофе</li>
+            <li>Праздничный торт 2 кг с фейерверком или свечами</li>
+            <li>Горка шампанского с сухим льдом, пробковый сбор включён</li>
+            <li>Живые цветы bud vases, свечи, бархатный текстиль</li>
+            <li>6 часов аренды в подарок (до 22:00) и плазменная панель</li>
+          </ul>
+          <div class="package__price">
+            <s>235 000 ₽</s>
+            <strong>200 000 ₽<sup>*</sup></strong>
+          </div>
+          <p class="package__fine">* Сервисный сбор не включён. Каждый дополнительный гость — +10 000 ₽.</p>
+          <div class="package__actions">
+            <a href="#" class="btn btn--fill" data-open="packageModal">Состав предложения</a>
+            <a href="tel:+79219547503" class="btn btn--light">Позвонить</a>
+            <a href="https://t.me/Cafe_Leskoff" target="_blank" rel="noopener" class="btn btn--light btn--tg">Telegram @Cafe_Leskoff</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Выбор формата -->
+      <p class="formats__q reveal">Или соберите праздник сами — какой формат вам нужен?</p>
+      <div class="formats reveal">
+        <div class="format is-active" tabindex="0">
+          <div class="format__media" style="--img: url('img/leskoff/banquet-lace.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+          <div class="format__body">
+            <div class="format__tag">Рассадка за столами</div>
+            <h3 class="format__title">Банкет</h3>
+            <div class="format__price">от 4 000 ₽ <span>на персону</span></div>
+            <ul class="format__facts">
+              <li><b>до 16</b> гостей в гостиной</li>
+              <li><b>до 40</b> гостей в основном зале, под закрытие</li>
+              <li><b>5 часов</b> бесплатно (до 22:00)</li>
+            </ul>
+            <a href="#" class="btn btn--dark" data-open="banquetMenu">Посмотреть меню банкета</a>
+          </div>
+        </div>
+        <div class="format" tabindex="0">
+          <div class="format__media" style="--img: url('img/leskoff/news-gastro.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+          <div class="format__body">
+            <div class="format__tag">Свободный формат</div>
+            <h3 class="format__title">Фуршет</h3>
+            <div class="format__price">от 1 600 ₽ <span>на персону</span></div>
+            <ul class="format__facts">
+              <li><b>до 16</b> гостей в гостиной</li>
+              <li><b>до 60</b> гостей в основном зале, без закрытия</li>
+              <li><b>2 часа</b> бесплатно (до 22:00)</li>
+            </ul>
+            <a href="#" class="btn btn--dark" data-open="buffetMenu">Посмотреть меню фуршета</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Условия проведения -->
+      <div class="terms reveal">
+        <div class="terms__head">
+          <div>
+            <div class="eyebrow">Условия проведения мероприятий</div>
+            <h3 class="terms__title">Минимальный заказ (депозит)</h3>
+          </div>
+          <p class="muted">В депозит входят меню, безалкогольные напитки, аренда, декор и 10% сервисный сбор.</p>
+        </div>
+        <div class="terms__table" role="table">
+          <div class="terms__row terms__row--head" role="row"><span>Формат</span><span>Вместимость</span><span>Депозит</span></div>
+          <div class="terms__row" role="row"><span>Банкет / фуршет в гостиной</span><span>до 16 гостей</span><span>50 000 ₽</span></div>
+          <div class="terms__row" role="row"><span>Банкет в основном зале <small>под закрытие</small></span><span>до 40 гостей</span><span>100 000 ₽</span></div>
+          <div class="terms__row" role="row"><span>Фуршет в основном зале <small>без закрытия</small></span><span>до 60 гостей</span><span>20 000 ₽</span></div>
+        </div>
+        <ul class="terms__notes">
+          <li>Банкет — 5 часов бесплатно (до 22:00), далее 10 000 ₽/час</li>
+          <li>Фуршет — 2 часа бесплатно (до 22:00), далее 10 000 ₽/час</li>
+          <li>Входит сервировка белым ресторанным фарфором и бокалами</li>
+        </ul>
+        <div class="terms__extras">
+          <a href="#" class="extra" data-open="condModal" data-tab-open="cd-decor"><b>Дополнительный декор</b><span>скатерти, цветы, свечи — от 500 ₽</span></a>
+          <a href="#" class="extra" data-open="condModal" data-tab-open="cd-drinks"><b>Напитки</b><span>свой алкоголь, пробковый сбор 450 ₽</span></a>
+          <a href="#" class="extra" data-open="condModal" data-tab-open="cd-bake"><b>Печём сами</b><span>торты, тирамису, каравай</span></a>
+        </div>
+        <div class="terms__contact">
+          <span>Организация мероприятий</span>
+          <div class="terms__contact-links">
+            <a href="tel:+79219547503">+7 (921) 954-75-03</a>
+            <a href="https://t.me/Cafe_Leskoff" target="_blank" rel="noopener" class="terms__tg">Telegram @Cafe_Leskoff</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ (общий для всех страниц) -->
+  <footer id="contacts" class="footer">
+    <div class="container">
+      <div class="footer__grid footer__grid--4">
+        <div>
+          <h4><a href="leskoff.html" class="footer__title">Leckoff <span>→</span></a></h4>
+          <p>Кафе · Санкт-Петербург</p>
+          <p>ул. Фурштатская, 50</p>
+          <p class="footer__phone"><a href="tel:+79218066517">+7 (921) 806-65-17</a></p>
+          <p><a href="https://t.me/Cafe_Leskoff" target="_blank" rel="noopener">Telegram @Cafe_Leskoff</a></p>
+          <p><a href="https://instagram.com/cafe_leskoff" target="_blank" rel="noopener">@cafe_leskoff<sup>*</sup></a></p>
+        </div>
+        <div>
+          <h4><a href="provence.html" class="footer__title">Provence <span>→</span></a></h4>
+          <p>Банкетный ресторан · Санкт-Петербург</p>
+          <p>ул. Моисеенко, 8/1</p>
+          <p class="footer__phone"><a href="tel:+79219966517">+7 (921) 996-65-17</a></p>
+          <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
+        </div>
+        <div>
+          <h4><a href="bazar.html" class="footer__title">Bazar <span>→</span></a></h4>
+          <p>Shawarma spot · Санкт-Петербург</p>
+          <p>ул. Моисеенко, 8/1А</p>
+          <p>вход левее главного входа в Provence</p>
+          <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
+        </div>
+        <div>
+          <h4>Мы в соцсетях</h4>
+          <p><a href="https://instagram.com/cafe_leskoff" target="_blank" rel="noopener">@cafe_leskoff<sup>*</sup></a></p>
+          <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
+          <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
+          <p><a href="https://instagram.com/vita_lika" target="_blank" rel="noopener">@vita_lika<sup>*</sup></a></p>
+          <p class="footer__gap"><a href="https://vk.ru/provencebanket" target="_blank" rel="noopener">ВК: provencebanket</a></p>
+          <p><a href="https://vk.ru/dvorec_brakosochetaniya_furshet" target="_blank" rel="noopener">ВК: dvorec_brakosochetaniya_furshet</a></p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+      <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>
+    </div>
+  </footer>
+
+  <!-- ПОПАП: МЕНЮ -->
+  <div class="modal" id="menuModal">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Leckoff</div>
+      <h2 class="h2">Меню</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="f-constructor">Конструктор завтраков</button>
+        <button class="tab" data-tab="f-breakfast">Завтраки</button>
+        <button class="tab" data-tab="f-soups">Супы</button>
+        <button class="tab" data-tab="f-salads">Салаты и закуски</button>
+        <button class="tab" data-tab="f-pizza">Римская пицца</button>
+        <button class="tab" data-tab="f-pasta">Паста</button>
+        <button class="tab" data-tab="f-hot">Горячие блюда</button>
+        <button class="tab" data-tab="f-bread">Хлеб</button>
+        <button class="tab" data-tab="f-dessert">Десерты</button>
+      </div>
+
+      <div class="menu-panel active" id="f-constructor">
+        <h3 class="menu-sub">Выберите основу</h3>
+        <div class="dish"><span class="dish__name">Омлет</span><span class="dish__price">290 ₽</span></div>
+        <div class="dish"><span class="dish__name">Яичница</span><span class="dish__price">290 ₽</span></div>
+        <div class="dish"><span class="dish__name">Скрэмбл</span><span class="dish__price">290 ₽</span></div>
+        <div class="dish"><span class="dish__name">Отварное яйцо (1 шт)</span><span class="dish__price">90 ₽</span><span class="dish__desc">вкрутую / пашот</span></div>
+        <h3 class="menu-sub">Добавьте топпинги <small>50 г</small></h3>
+        <div class="dish"><span class="dish__name">Лосось слабой соли</span><span class="dish__price">390 ₽</span></div>
+        <div class="dish"><span class="dish__name">Креветки</span><span class="dish__price">320 ₽</span></div>
+        <div class="dish"><span class="dish__name">Бекон</span><span class="dish__price">230 ₽</span></div>
+        <div class="dish"><span class="dish__name">Жареная докторская колбаса</span><span class="dish__price">130 ₽</span></div>
+        <div class="dish"><span class="dish__name">Пармезан / бри / горгондзола</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Взбитое сливочное масло</span><span class="dish__price">150 ₽</span><span class="dish__desc">с чесноком и укропом</span></div>
+        <div class="dish"><span class="dish__name">Мягкий козий сыр</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Вяленые томаты</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Свежие томаты / черри</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Сицилийские оливки</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Шампиньоны</span><span class="dish__price">80 ₽</span></div>
+        <div class="dish"><span class="dish__name">Авокадо</span><span class="dish__price">190 ₽</span></div>
+        <div class="dish"><span class="dish__name">Маринованный огурец</span><span class="dish__price">120 ₽</span></div>
+        <div class="dish"><span class="dish__name">Мортаделла</span><span class="dish__price">130 ₽</span></div>
+        <div class="dish"><span class="dish__name">Прошутто</span><span class="dish__price">160 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="f-breakfast">
+        <div class="dish"><span class="dish__name">Русский завтрак · на двоих</span><span class="dish__price">5 100 ₽</span><span class="dish__desc">Блины, щучья икра, взбитое сливочное масло, домашнее варенье, сметана, яйцо. В качестве сопровождения — пара бокалов игристого вина или фирменная хреновуха на ваш выбор</span></div>
+        <div class="dish"><span class="dish__name">Яйцо бенедикт на тосте</span><span class="dish__price">790 / 670 ₽</span><span class="dish__desc">с лососем / беконом</span></div>
+        <div class="dish"><span class="dish__name">Рисовая / овсяная / манная каша со свежими ягодами</span><span class="dish__price">450 ₽</span><span class="dish__desc">+ солёная карамель 190 ₽ · + орехи 150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Сырники со сметаной / сгущёнкой</span><span class="dish__price">450 ₽</span></div>
+        <div class="dish"><span class="dish__name">Шакшука с хрустящей чиабаттой</span><span class="dish__price">720 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="f-soups">
+        <div class="dish"><span class="dish__name">Средиземноморский томатный суп с морепродуктами</span><span class="dish__price">750 ₽</span></div>
+        <div class="dish"><span class="dish__name">Куриный суп с лапшой, перепелиным яйцом и брокколи</span><span class="dish__price">450 ₽</span></div>
+        <div class="dish"><span class="dish__name">Борщ с гренкой и белорусским салом</span><span class="dish__price">550 ₽</span><span class="dish__desc">+ дополнительное сало 80 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="f-salads">
+        <div class="dish"><span class="dish__name">Антипасти</span><span class="dish__price">850 / 1 250 ₽</span><span class="dish__desc">Сальчичон, мортаделла, парма, пармезан, оливки, вяленые томаты, хлебные чипсы · на одного / на двоих</span></div>
+        <div class="dish"><span class="dish__name">Гуакамоле</span><span class="dish__price">550 ₽</span><span class="dish__desc">Авокадо, томаты, чеснок, кинза, чили</span></div>
+        <div class="dish"><span class="dish__name">Тартар из говядины / лосося</span><span class="dish__price">750 / 910 ₽</span></div>
+        <div class="dish"><span class="dish__name">Цезарь с курицей / креветками</span><span class="dish__price">570 / 670 ₽</span></div>
+        <div class="dish"><span class="dish__name">Тёплый салат с телятиной</span><span class="dish__price">750 ₽</span></div>
+        <div class="dish"><span class="dish__name">Салат с печёными баклажанами и козьим сыром</span><span class="dish__price">550 ₽</span></div>
+        <div class="dish"><span class="dish__name">Салат из свежих овощей</span><span class="dish__price">340 ₽</span></div>
+        <div class="dish"><span class="dish__name">Креветки в соусе том ям</span><span class="dish__price">640 ₽</span></div>
+        <div class="dish"><span class="dish__name">Мидии в сливочном соусе</span><span class="dish__price">740 ₽</span></div>
+        <div class="dish"><span class="dish__name">Жареный сыр бри с яблочным чатни и трюфельным маслом</span><span class="dish__price">650 ₽</span></div>
+        <div class="dish"><span class="dish__name">Брускетта</span><span class="dish__price">790 / 460 / 540 ₽</span><span class="dish__desc">с лососем / мортаделлой / баклажаном и козьим сыром</span></div>
+        <div class="dish"><span class="dish__name">Картофель фри / батат фри</span><span class="dish__price">350 / 450 ₽</span><span class="dish__desc">с соусом на выбор</span></div>
+      </div>
+      <div class="menu-panel" id="f-pizza">
+        <p class="menu-note">Размер 25 × 20 см</p>
+        <div class="dish"><span class="dish__name">Четыре сыра</span><span class="dish__price">690 ₽</span><span class="dish__desc">Сливочный сыр, горгондзола, пармезан, моцарелла</span></div>
+        <div class="dish"><span class="dish__name">Азия с креветками</span><span class="dish__price">780 ₽</span><span class="dish__desc">Сливочный том ям, креветки, моцарелла, черри, цукини, кунжут, нори</span></div>
+        <div class="dish"><span class="dish__name">Пепперони</span><span class="dish__price">720 ₽</span><span class="dish__desc">Томатный соус, пепперони, моцарелла</span></div>
+        <div class="dish"><span class="dish__name">Груша-горгондзола</span><span class="dish__price">690 ₽</span><span class="dish__desc">Сливочный соус, моцарелла, горгондзола, груша, мёд</span></div>
+        <div class="dish"><span class="dish__name">Маргарита</span><span class="dish__price">520 ₽</span><span class="dish__desc">Томатный соус, томаты, моцарелла, прованские травы</span></div>
+        <h3 class="menu-sub">Добавки</h3>
+        <div class="dish"><span class="dish__name">Пармезан / моцарелла</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Халапеньо</span><span class="dish__price">70 ₽</span></div>
+        <div class="dish"><span class="dish__name">Трюфельное масло</span><span class="dish__price">150 ₽</span></div>
+        <div class="dish"><span class="dish__name">Красный лук</span><span class="dish__price">40 ₽</span></div>
+        <div class="dish"><span class="dish__name">Оливки / маслины</span><span class="dish__price">70 ₽</span></div>
+        <div class="dish"><span class="dish__name">Соус для корочек</span><span class="dish__price">80 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="f-pasta">
+        <div class="dish"><span class="dish__name">Фузилли с говядиной</span><span class="dish__price">590 ₽</span></div>
+        <div class="dish"><span class="dish__name">Паста карбонара</span><span class="dish__price">490 ₽</span></div>
+        <div class="dish"><span class="dish__name">Паста с морепродуктами</span><span class="dish__price">590 ₽</span></div>
+        <p class="menu-note">+ порция пармезана 150 ₽</p>
+      </div>
+      <div class="menu-panel" id="f-hot">
+        <div class="dish"><span class="dish__name">Филе дорадо с пюре и шпинатным соусом</span><span class="dish__price">890 ₽</span></div>
+        <div class="dish"><span class="dish__name">Утиная ножка с грушей и пирожком с квашеной капустой</span><span class="dish__price">950 ₽</span></div>
+        <div class="dish"><span class="dish__name">Говяжий язык с печёным картофелем и сливочным терияки</span><span class="dish__price">840 ₽</span></div>
+        <div class="dish"><span class="dish__name">Бефстроганов с пюре и маринованным огурцом</span><span class="dish__price">790 ₽</span></div>
+        <div class="dish"><span class="dish__name">Говяжьи щёки с кускусом и вялеными томатами</span><span class="dish__price">910 ₽</span></div>
+        <div class="dish"><span class="dish__name">Стейк из свинины су-вид с овощами гриль</span><span class="dish__price">750 ₽</span></div>
+        <div class="dish"><span class="dish__name">Запечённый лосось со стейком из айсберга</span><span class="dish__price">1 150 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="f-bread">
+        <div class="dish"><span class="dish__name">Хлебная корзина</span><span class="dish__price">200 ₽</span></div>
+        <div class="dish"><span class="dish__name">Фокачча с соусом песто и пармезаном</span><span class="dish__price">450 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="f-dessert">
+        <div class="dish"><span class="dish__name">Яблочный штрудель с мороженым</span><span class="dish__price">350 ₽</span></div>
+        <div class="dish"><span class="dish__name">Вишнёвый штрудель с мороженым</span><span class="dish__price">500 ₽</span></div>
+        <div class="dish"><span class="dish__name">Мороженое в ассортименте</span><span class="dish__price">160 ₽</span></div>
+        <div class="dish"><span class="dish__name">Бискотти</span><span class="dish__price">150 ₽</span></div>
+      </div>
+      <p class="menu-footnote">Сервисный сбор за обслуживание компании более 8 человек — 10%</p>
+    </div>
+  </div>
+
+  <!-- ПОПАП: БАР -->
+  <div class="modal" id="barModal">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Leckoff</div>
+      <h2 class="h2">Барная карта</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="b-coffee">Кофе</button>
+        <button class="tab" data-tab="b-tea">Чай</button>
+        <button class="tab" data-tab="b-soft">Лимонады и напитки</button>
+        <button class="tab" data-tab="b-wine">Вино</button>
+        <button class="tab" data-tab="b-cocktails">Коктейли и пиво</button>
+        <button class="tab" data-tab="b-strong">Крепкий алкоголь</button>
+      </div>
+
+      <div class="menu-panel active" id="b-coffee">
+        <div class="dish"><span class="dish__name">Эспрессо</span><span class="dish__price">190 ₽</span></div>
+        <div class="dish"><span class="dish__name">Двойной эспрессо</span><span class="dish__price">250 ₽</span></div>
+        <div class="dish"><span class="dish__name">Американо</span><span class="dish__price">210 / 260 ₽</span><span class="dish__desc">0,2 л / 0,3 л</span></div>
+        <div class="dish"><span class="dish__name">Капучино</span><span class="dish__price">260 / 340 ₽</span><span class="dish__desc">0,2 л / 0,3 л</span></div>
+        <div class="dish"><span class="dish__name">Флэт уайт</span><span class="dish__price">300 ₽</span><span class="dish__desc">0,2 л</span></div>
+        <div class="dish"><span class="dish__name">Латте</span><span class="dish__price">290 ₽</span><span class="dish__desc">0,3 л</span></div>
+        <div class="dish"><span class="dish__name">Раф</span><span class="dish__price">330 ₽</span><span class="dish__desc">0,3 л</span></div>
+        <div class="dish"><span class="dish__name">Лавандовый раф</span><span class="dish__price">370 ₽</span><span class="dish__desc">0,3 л</span></div>
+        <div class="dish"><span class="dish__name">Фирменный кофе Leckoff</span><span class="dish__price">320 ₽</span><span class="dish__desc">0,3 л</span></div>
+        <div class="dish"><span class="dish__name">Decaf</span><span class="dish__price">300 ₽</span><span class="dish__desc">0,2 л</span></div>
+        <div class="dish"><span class="dish__name">Какао</span><span class="dish__price">300 ₽</span><span class="dish__desc">0,3 л</span></div>
+        <h3 class="menu-sub">Добавки</h3>
+        <div class="dish"><span class="dish__name">Растительное молоко</span><span class="dish__price">80 ₽</span></div>
+        <div class="dish"><span class="dish__name">Молоко</span><span class="dish__price">50 ₽</span></div>
+        <div class="dish"><span class="dish__name">Сироп</span><span class="dish__price">50 ₽</span></div>
+        <div class="dish"><span class="dish__name">Мёд</span><span class="dish__price">50 ₽</span></div>
+        <h3 class="menu-sub">Холодный кофе <small>0,3 л</small></h3>
+        <div class="dish"><span class="dish__name">Апельсиновый бамбл</span><span class="dish__price">450 ₽</span></div>
+        <div class="dish"><span class="dish__name">Эспрессо тоник</span><span class="dish__price">450 ₽</span></div>
+        <div class="dish"><span class="dish__name">Айс латте</span><span class="dish__price">330 ₽</span></div>
+        <div class="dish"><span class="dish__name">Матча-латте</span><span class="dish__price">360 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="b-tea">
+        <p class="menu-note">0,6 л / 1,0 л</p>
+        <div class="dish"><span class="dish__name">Чёрный чай ассам</span><span class="dish__price">330 / 580 ₽</span></div>
+        <div class="dish"><span class="dish__name">Зелёный чай сенча</span><span class="dish__price">330 / 580 ₽</span></div>
+        <div class="dish"><span class="dish__name">Молочный улун</span><span class="dish__price">330 / 580 ₽</span></div>
+        <div class="dish"><span class="dish__name">Гречишный чай</span><span class="dish__price">330 / 580 ₽</span></div>
+        <div class="dish"><span class="dish__name">Альпийский луг</span><span class="dish__price">330 / 580 ₽</span></div>
+        <div class="dish"><span class="dish__name">Брусничный чай с апельсином и розмарином</span><span class="dish__price">520 / 800 ₽</span></div>
+        <p class="menu-note">+ лимон / мёд / розмарин / мята / чабрец — 50 ₽</p>
+        <h3 class="menu-sub">Горячие напитки <small>0,3 л</small></h3>
+        <div class="dish"><span class="dish__name">Ягодный пунш с мятой и лимоном</span><span class="dish__price">350 ₽</span></div>
+        <div class="dish"><span class="dish__name">Облепиховый пунш с имбирём, апельсином и кардамоном</span><span class="dish__price">350 ₽</span></div>
+        <div class="dish"><span class="dish__name">Глинтвейн б/а / алкогольный</span><span class="dish__price">350 / 490 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="b-soft">
+        <h3 class="menu-sub">Домашний лимонад <small>0,3 л / 1,0 л</small></h3>
+        <div class="dish"><span class="dish__name">Лайм-ваниль</span><span class="dish__price">350 / 650 ₽</span></div>
+        <div class="dish"><span class="dish__name">Клубника-мята</span><span class="dish__price">350 / 650 ₽</span></div>
+        <div class="dish"><span class="dish__name">Ананас-лайм</span><span class="dish__price">350 / 650 ₽</span></div>
+        <div class="dish"><span class="dish__name">Манго-апельсин</span><span class="dish__price">350 / 650 ₽</span></div>
+        <div class="dish"><span class="dish__name">Вишня-лайм</span><span class="dish__price">350 / 650 ₽</span></div>
+        <div class="dish"><span class="dish__name">Домашний морс</span><span class="dish__price">350 / 650 ₽</span></div>
+        <h3 class="menu-sub">Холодные напитки</h3>
+        <div class="dish"><span class="dish__name">Сок в ассортименте</span><span class="dish__price">225 ₽</span></div>
+        <div class="dish"><span class="dish__name">Апельсиновый фреш</span><span class="dish__price">290 / 550 ₽</span><span class="dish__desc">0,2 л / 0,4 л</span></div>
+        <div class="dish"><span class="dish__name">Coca-Cola</span><span class="dish__price">350 ₽</span></div>
+        <div class="dish"><span class="dish__name">Evervess индиан тоник</span><span class="dish__price">250 ₽</span></div>
+        <div class="dish"><span class="dish__name">Вода газ / не газ</span><span class="dish__price">290 ₽</span></div>
+      </div>
+      <div class="menu-panel" id="b-wine">
+        <p class="menu-note">0,15 л / 0,75 л</p>
+        <h3 class="menu-sub">Игристое вино</h3>
+        <div class="dish"><span class="dish__name">«Cava»</span><span class="dish__price">700 / 3 500 ₽</span><span class="dish__desc">2021, брют, Испания, 10,5%</span></div>
+        <div class="dish"><span class="dish__name">«Comte de Chamberi»</span><span class="dish__price">500 / 2 500 ₽</span><span class="dish__desc">2021, брют, Испания, 10,5%</span></div>
+        <div class="dish"><span class="dish__name">«Prosecco»</span><span class="dish__price">790 / 3 950 ₽</span><span class="dish__desc">2021, брют, Италия, 11%</span></div>
+        <div class="dish"><span class="dish__name">«Leon Launois»</span><span class="dish__price">14 700 ₽</span><span class="dish__desc">2018, брют, Франция, 12,5% · только бутылка</span></div>
+        <div class="dish"><span class="dish__name">Вино игристое безалкогольное</span><span class="dish__price">2 000 ₽</span><span class="dish__desc">только бутылка</span></div>
+        <h3 class="menu-sub">Красное вино</h3>
+        <div class="dish"><span class="dish__name">«Barbera»</span><span class="dish__price">750 / 3 800 ₽</span><span class="dish__desc">2021, сухое, Италия, 13%</span></div>
+        <div class="dish"><span class="dish__name">«The Guv’nor»</span><span class="dish__price">930 / 4 650 ₽</span><span class="dish__desc">2021, полусухое, Испания, 14%</span></div>
+        <h3 class="menu-sub">Белое вино</h3>
+        <div class="dish"><span class="dish__name">«Obra Prima»</span><span class="dish__price">520 / 2 600 ₽</span><span class="dish__desc">2022, полусухое, Португалия, 11,5%</span></div>
+        <div class="dish"><span class="dish__name">«Piteira Premium»</span><span class="dish__price">600 / 3 000 ₽</span><span class="dish__desc">сухое, Португалия, 11,5%</span></div>
+      </div>
+      <div class="menu-panel" id="b-cocktails">
+        <h3 class="menu-sub">Коктейли <small>0,4 л</small></h3>
+        <div class="dish"><span class="dish__name">«Spritz»</span><span class="dish__price">650 ₽</span></div>
+        <div class="dish"><span class="dish__name">«Martini Fiero & Tonic»</span><span class="dish__price">650 ₽</span></div>
+        <div class="dish"><span class="dish__name">«Gin & Tonic»</span><span class="dish__price">650 ₽</span></div>
+        <div class="dish"><span class="dish__name">«Limoncello Spritz»</span><span class="dish__price">650 ₽</span></div>
+        <h3 class="menu-sub">Пиво <small>0,33 л</small></h3>
+        <div class="dish"><span class="dish__name">«Corona Extra»</span><span class="dish__price">350 ₽</span><span class="dish__desc">фильтрованное, Мексика, 4,5%</span></div>
+        <div class="dish"><span class="dish__name">«Non Alcoholic»</span><span class="dish__price">350 ₽</span><span class="dish__desc">безалкогольное фильтрованное</span></div>
+      </div>
+      <div class="menu-panel" id="b-strong">
+        <h3 class="menu-sub">Водка <small>0,05 л / 1,0 л</small></h3>
+        <div class="dish"><span class="dish__name">«Царская» оригинальная</span><span class="dish__price">250 / 4 000 ₽</span><span class="dish__desc">40%</span></div>
+        <h3 class="menu-sub">Виски <small>0,05 л / 0,7 л</small></h3>
+        <div class="dish"><span class="dish__name">«Jameson»</span><span class="dish__price">380 / 5 300 ₽</span><span class="dish__desc">Ирландия, 40%</span></div>
+        <h3 class="menu-sub">Коньяк <small>0,05 л / 0,7 л</small></h3>
+        <div class="dish"><span class="dish__name">«Henry Mounier»</span><span class="dish__price">900 / 9 000 ₽</span><span class="dish__desc">Франция, 40%</span></div>
+        <h3 class="menu-sub">Джин <small>0,05 л / 0,7 л</small></h3>
+        <div class="dish"><span class="dish__name">«Whitley Neill»</span><span class="dish__price">370 / 4 380 ₽</span><span class="dish__desc">Великобритания, 47%</span></div>
+        <h3 class="menu-sub">Ром <small>0,05 л / 0,7 л</small></h3>
+        <div class="dish"><span class="dish__name">Ром белый</span><span class="dish__price">350 / 4 500 ₽</span><span class="dish__desc">Куба</span></div>
+        <h3 class="menu-sub">Текила <small>0,05 л / 0,7 л</small></h3>
+        <div class="dish"><span class="dish__name">Tequila Silver</span><span class="dish__price">540 / 7 800 ₽</span><span class="dish__desc">Мексика, 38%</span></div>
+        <h3 class="menu-sub">Ликёр <small>0,05 л / 0,7 л</small></h3>
+        <div class="dish"><span class="dish__name">«Jägermeister»</span><span class="dish__price">370 / 4 900 ₽</span><span class="dish__desc">Германия, 35%</span></div>
+        <h3 class="menu-sub">Настойки <small>0,05 л</small></h3>
+        <div class="dish"><span class="dish__name">Брусничная, облепиховая, хреновуха, сливочный лимончелло, ананасовая, чёрная смородина</span><span class="dish__price">220 ₽</span><span class="dish__desc">по ассортименту спрашивайте на баре</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ПОПАП: МЕНЮ БАНКЕТА -->
+  <div class="modal" id="banquetMenu">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Private events · Банкет</div>
+      <h2 class="h2">Банкетное меню</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="bq-1">№1 · 4 000 ₽</button>
+        <button class="tab" data-tab="bq-2">№2 · 4 600 ₽</button>
+        <button class="tab" data-tab="bq-3">№3 · 5 250 ₽</button>
+        <button class="tab" data-tab="bq-4">№4 · 6 300 ₽</button>
+      </div>
+
+      <div class="menu-panel active" id="bq-1">
+        <div class="set-price"><b>4 000 ₽</b> <span>на персону</span></div>
+        <h3 class="menu-sub">Салаты и закуски</h3>
+        <div class="dish"><span class="dish__name">Итальянское плато</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Мясо от шефа</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато с мёдом, виноградом, орешками</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Селёдочка с картофелем, лучком и зеленью</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Салат греческий</span><span class="dish__price dish__weight">80 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Цезарь» с куриным филе</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Оливье» классический</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Разносолы и маринады</span><span class="dish__price dish__weight">50 г</span></div>
+        <h3 class="menu-sub">Горячие блюда <small>на выбор · 300 г</small></h3>
+        <div class="dish"><span class="dish__name">Свинина гриль с картофелем и запечёнными овощами</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Куриное филе гриль с картофелем айдахо</span><span class="dish__price dish__weight"></span></div>
+      </div>
+      <div class="menu-panel" id="bq-2">
+        <div class="set-price"><b>4 600 ₽</b> <span>на персону</span></div>
+        <h3 class="menu-sub">Салаты и закуски</h3>
+        <div class="dish"><span class="dish__name">Итальянское плато</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Мясо от шефа</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато с мёдом, виноградом, орешками</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Тост с лососем слабой соли и сливочным сыром</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Салат с печёным баклажаном</span><span class="dish__price dish__weight">80 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Цезарь» с куриным филе</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Оливье» с бужениной</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Разносолы и маринады</span><span class="dish__price dish__weight">50 г</span></div>
+        <h3 class="menu-sub">Горячая закуска <small>120 г</small></h3>
+        <div class="dish"><span class="dish__name">Шашлычок из филе цыплёнка с черри</span><span class="dish__price dish__weight"></span></div>
+        <h3 class="menu-sub">Горячие блюда <small>на выбор · 300 г</small></h3>
+        <div class="dish"><span class="dish__name">Куриное филе гриль с овощами на пару</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Стейк из филе судака с картофельным пюре</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Стейк из филе свинины с картофелем и соусом демиглас</span><span class="dish__price dish__weight"></span></div>
+      </div>
+      <div class="menu-panel" id="bq-3">
+        <div class="set-price"><b>5 250 ₽</b> <span>на персону</span></div>
+        <h3 class="menu-sub">Салаты и закуски</h3>
+        <div class="dish"><span class="dish__name">Филе лосося шеф-посола</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Мясо от шефа</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато с мёдом, виноградом, орешками</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Овощное ассорти</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Маринованные лесные грибочки</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Салат с индейкой и ананасом</span><span class="dish__price dish__weight">80 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Цезарь» с куриным филе</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Оливье» с ростбифом</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Фрукты</span><span class="dish__price dish__weight">100 г</span></div>
+        <h3 class="menu-sub">Горячая закуска <small>120 г</small></h3>
+        <div class="dish"><span class="dish__name">Жульен куриный с грибами</span><span class="dish__price dish__weight"></span></div>
+        <h3 class="menu-sub">Горячие блюда <small>на выбор · 300 г</small></h3>
+        <div class="dish"><span class="dish__name">Стейк из филе лосося с пюре со шпинатом</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Утиная ножка с томлёной грушей и пирожком с капустой</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Телячьи щёчки с кускусом и вялеными томатами</span><span class="dish__price dish__weight"></span></div>
+      </div>
+      <div class="menu-panel" id="bq-4">
+        <div class="set-price"><b>6 300 ₽</b> <span>на персону</span></div>
+        <h3 class="menu-sub">Салаты и закуски</h3>
+        <div class="dish"><span class="dish__name">Рыбное плато</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Мясо от шефа</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато с мёдом, виноградом, орешками</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Итальянское плато</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Пикантные рулетики из баклажанов с сыром</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Грузди маринованные со сметаной</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Салат с палтусом</span><span class="dish__price dish__weight">80 г</span></div>
+        <div class="dish"><span class="dish__name">Тёплый салат с говяжьей вырезкой</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Оливье» с телятиной</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Салат «Цезарь» с креветками</span><span class="dish__price dish__weight">60 г</span></div>
+        <div class="dish"><span class="dish__name">Фрукты</span><span class="dish__price dish__weight">100 г</span></div>
+        <h3 class="menu-sub">Горячая закуска <small>120 г</small></h3>
+        <div class="dish"><span class="dish__name">Шашлычок из филе тунца</span><span class="dish__price dish__weight"></span></div>
+        <h3 class="menu-sub">Горячие блюда <small>на выбор · 300 г</small></h3>
+        <div class="dish"><span class="dish__name">Медальоны из говядины с картофелем и соусом</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Палтус с пюре и стручковой фасолью</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Филе индейки гриль с овощами</span><span class="dish__price dish__weight"></span></div>
+      </div>
+      <p class="menu-footnote">Бронирование мероприятий и детали меню: <a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+    </div>
+  </div>
+
+  <!-- ПОПАП: МЕНЮ ФУРШЕТА -->
+  <div class="modal" id="buffetMenu">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Private events · Фуршет</div>
+      <h2 class="h2">Фуршетное меню</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="bf-1">№1 · 1 600 ₽</button>
+        <button class="tab" data-tab="bf-2">№2 · 2 400 ₽</button>
+        <button class="tab" data-tab="bf-3">№3 · 3 000 ₽</button>
+        <button class="tab" data-tab="bf-sets">Дополнить сетом</button>
+      </div>
+
+      <div class="menu-panel active" id="bf-1">
+        <div class="set-price"><b>1 600 ₽</b> <span>на персону</span></div>
+        <div class="dish"><span class="dish__name">Канапе сыр с виноградом</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Канапе с бужениной, печёным томатом и сыром</span><span class="dish__price dish__weight">25 г</span></div>
+        <div class="dish"><span class="dish__name">Тарталетка со столичным салатом</span><span class="dish__price dish__weight">30 г</span></div>
+        <div class="dish"><span class="dish__name">Канапе с мортаделлой</span><span class="dish__price dish__weight">25 г</span></div>
+        <div class="dish"><span class="dish__name">Тарталетка с копчёной белой рыбой</span><span class="dish__price dish__weight">80 г</span></div>
+        <div class="dish"><span class="dish__name">Фруктовая тарелка</span><span class="dish__price dish__weight">100 г</span></div>
+        <div class="dish"><span class="dish__name">Домашний лимонад</span><span class="dish__price dish__weight">200 мл</span></div>
+      </div>
+      <div class="menu-panel" id="bf-2">
+        <div class="set-price"><b>2 400 ₽</b> <span>на персону</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато</span><span class="dish__price dish__weight">70 г</span></div>
+        <div class="dish"><span class="dish__name">Антипасти</span><span class="dish__price dish__weight">70 г</span></div>
+        <div class="dish"><span class="dish__name">Рулетик из ветчины со сливочным сыром</span><span class="dish__price dish__weight">30 г</span></div>
+        <div class="dish"><span class="dish__name">Канапе с лососем слабой соли, сливочным сыром</span><span class="dish__price dish__weight">25 г</span></div>
+        <div class="dish"><span class="dish__name">Канапе с говяжьим языком, огурчиком и сливочным хреном</span><span class="dish__price dish__weight">25 г</span></div>
+        <div class="dish"><span class="dish__name">Тарталетка с мясным салатом</span><span class="dish__price dish__weight">30 г</span></div>
+        <div class="dish"><span class="dish__name">Шашлычок куриный с черри</span><span class="dish__price dish__weight">120 г</span></div>
+        <div class="dish"><span class="dish__name">Фруктовая тарелка</span><span class="dish__price dish__weight">100 г</span></div>
+        <div class="dish"><span class="dish__name">Домашний лимонад</span><span class="dish__price dish__weight">200 мл</span></div>
+      </div>
+      <div class="menu-panel" id="bf-3">
+        <div class="set-price"><b>3 000 ₽</b> <span>на персону</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато</span><span class="dish__price dish__weight">70 г</span></div>
+        <div class="dish"><span class="dish__name">Антипасти</span><span class="dish__price dish__weight">70 г</span></div>
+        <div class="dish"><span class="dish__name">Рулетик из ветчины со сливочным сыром</span><span class="dish__price dish__weight">30 г</span></div>
+        <div class="dish"><span class="dish__name">Канапе с лососем слабой соли, сливочным сыром</span><span class="dish__price dish__weight">25 г</span></div>
+        <div class="dish"><span class="dish__name">Тост с паштетом из птицы, чатни из яблок и халвой</span><span class="dish__price dish__weight">70 г</span></div>
+        <div class="dish"><span class="dish__name">Канапе с креветкой</span><span class="dish__price dish__weight">25 г</span></div>
+        <div class="dish"><span class="dish__name">Тарталетка с мясным салатом</span><span class="dish__price dish__weight">30 г</span></div>
+        <div class="dish"><span class="dish__name">Шашлычок куриный с цукини</span><span class="dish__price dish__weight">120 г</span></div>
+        <div class="dish"><span class="dish__name">Шашлычок с тунцом и черри</span><span class="dish__price dish__weight">120 г</span></div>
+        <div class="dish"><span class="dish__name">Фруктовая тарелка</span><span class="dish__price dish__weight">100 г</span></div>
+        <div class="dish"><span class="dish__name">Домашний лимонад</span><span class="dish__price dish__weight">200 мл</span></div>
+      </div>
+      <div class="menu-panel" id="bf-sets">
+        <p class="menu-note">Любое фуршетное меню можно дополнить сетом — 5 500 ₽ за сет, 1 500 г</p>
+        <div class="dish"><span class="dish__name">Вегетарианский сет</span><span class="dish__price dish__weight">5 500 ₽</span><span class="dish__desc">24 закуски: мини-сэндвич с томатом, авокадо и орешками, овощные палочки в шоте, винегрет, мини-сэндвич с вегетарианским мясом сейтан, хумус с гриссини</span></div>
+        <div class="dish"><span class="dish__name">Русский сет</span><span class="dish__price dish__weight">5 500 ₽</span><span class="dish__desc">24 закуски: сельдь на бородинском хлебе, сало белорусское на ржаном хлебе, винегрет с килечкой, ассорти солений, малосольный огурчик</span></div>
+        <div class="dish"><span class="dish__name">Сет мини-сэндвичей</span><span class="dish__price dish__weight">5 500 ₽</span><span class="dish__desc">20 сэндвичей: с томатом; с лососем слабой соли и сливочным сыром; с моцареллой и томатами; с ветчиной и сыром; с курочкой су-вид, листом салата и пикантным соусом</span></div>
+        <div class="dish"><span class="dish__name">Салат-бар</span><span class="dish__price dish__weight">5 500 ₽</span><span class="dish__desc">30 закусок: салат мясной, снежный краб, салат с треской горячего копчения, сельдь под шубой, гнездо глухаря</span></div>
+      </div>
+      <p class="menu-footnote">Бронирование мероприятий и детали меню: <a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+    </div>
+  </div>
+
+  <!-- ПОПАП: ПАКЕТНОЕ ПРЕДЛОЖЕНИЕ -->
+  <div class="modal" id="packageModal">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Пакетное предложение</div>
+      <h2 class="h2">Праздник на 20 гостей</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="pk-menu">Банкетное меню</button>
+        <button class="tab" data-tab="pk-incl">Что ещё входит</button>
+      </div>
+
+      <div class="menu-panel active" id="pk-menu">
+        <p class="menu-note">Банкетное меню стоимостью 4 600 ₽ на персону — на 20 гостей</p>
+        <h3 class="menu-sub">Салаты и закуски</h3>
+        <div class="dish"><span class="dish__name">Салат «Цезарь»</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Салат с печёным баклажаном</span><span class="dish__price dish__weight">80 г</span><span class="dish__desc">микс салат, паприка, сливочный сыр, томаты, печёные баклажаны</span></div>
+        <div class="dish"><span class="dish__name">Мясо от шефа</span><span class="dish__price dish__weight">50 г</span><span class="dish__desc">свинина по-деревенски, язык молодого бычка, куриное филе, «русская горчица», сливочный хрен</span></div>
+        <div class="dish"><span class="dish__name">Сырное плато</span><span class="dish__price dish__weight">60 г</span><span class="dish__desc">ассорти сыров с мёдом, орешками, виноградом</span></div>
+        <div class="dish"><span class="dish__name">Салат «Оливье» с бужениной</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Итальянское плато</span><span class="dish__price dish__weight">50 г</span><span class="dish__desc">сальчичон, прошутто, мортаделла</span></div>
+        <div class="dish"><span class="dish__name">Разносолы и маринады</span><span class="dish__price dish__weight">80 г</span></div>
+        <div class="dish"><span class="dish__name">Тост с лососем слабой соли и сливочным сыром</span><span class="dish__price dish__weight">50 г</span></div>
+        <div class="dish"><span class="dish__name">Хлебная корзина</span><span class="dish__price dish__weight"></span><span class="dish__desc">чёрный хлеб и багет</span></div>
+        <h3 class="menu-sub">Второй курс</h3>
+        <div class="dish"><span class="dish__name">Шашлычок из филе цыплёнка с черри</span><span class="dish__price dish__weight">120 г</span></div>
+        <h3 class="menu-sub">Основное блюдо <small>на выбор</small></h3>
+        <div class="dish"><span class="dish__name">Стейк из филе свинины</span><span class="dish__price dish__weight"></span><span class="dish__desc">с картофелем и соусом демиглас</span></div>
+        <div class="dish"><span class="dish__name">Стейк из филе судака</span><span class="dish__price dish__weight"></span><span class="dish__desc">с картофельным пюре</span></div>
+        <div class="dish"><span class="dish__name">Куриное филе гриль</span><span class="dish__price dish__weight"></span><span class="dish__desc">с овощами на пару</span></div>
+      </div>
+      <div class="menu-panel" id="pk-incl">
+        <h3 class="menu-sub">Напитки и угощения</h3>
+        <div class="dish"><span class="dish__name">Домашние лимонады, морс в ассортименте</span><span class="dish__price dish__weight">безлимит</span></div>
+        <div class="dish"><span class="dish__name">Чай, кофе</span><span class="dish__price dish__weight">безлимит</span></div>
+        <div class="dish"><span class="dish__name">Фуршет</span><span class="dish__price dish__weight">40 шт</span><span class="dish__desc">ассорти канапе</span></div>
+        <div class="dish"><span class="dish__name">Праздничный торт</span><span class="dish__price dish__weight">2 кг</span><span class="dish__desc">можно увеличить: +3 000 ₽/кг</span></div>
+        <div class="dish"><span class="dish__name">Кондитерский фейерверк или свечи в торт</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Пробковый сбор</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Горка шампанского с сухим льдом</span><span class="dish__price dish__weight"></span></div>
+        <h3 class="menu-sub">Оформление</h3>
+        <div class="dish"><span class="dish__name">Живые цветы в стиле bud vases</span><span class="dish__price dish__weight"></span><span class="dish__desc">президиум и гостевые столы, цветовая гамма на выбор; декор множеством маленьких ваз</span></div>
+        <div class="dish"><span class="dish__name">Античные, насыпные и чайные свечи</span><span class="dish__price dish__weight"></span></div>
+        <div class="dish"><span class="dish__name">Бархатный текстиль</span><span class="dish__price dish__weight"></span><span class="dish__desc">президиум или накрытие деревянных столов в цвете «американский орех»</span></div>
+        <div class="dish"><span class="dish__name">Тарелки с подстановочными блюдами в стиле Pinterest</span><span class="dish__price dish__weight"></span></div>
+        <h3 class="menu-sub">Зал</h3>
+        <div class="dish"><span class="dish__name">6 часов аренды ресторана в подарок</span><span class="dish__price dish__weight">до 22:00</span></div>
+        <div class="dish"><span class="dish__name">Плазменная панель</span><span class="dish__price dish__weight"></span></div>
+      </div>
+      <div class="pkg-total">Стоимость предложения: <s>235 000 ₽</s> <b>200 000 ₽*</b></div>
+      <p class="menu-footnote">* Сервисный сбор не включён. ** Каждый дополнительный гость по пакетному предложению — +10 000 ₽.<br>Забронировать: <a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+    </div>
+  </div>
+
+  <!-- ПОПАП: ДЕКОР / НАПИТКИ / ВЫПЕЧКА -->
+  <div class="modal" id="condModal">
+    <div class="modal__box">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Private events</div>
+      <h2 class="h2">Дополнительно</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="cd-decor">Декор</button>
+        <button class="tab" data-tab="cd-drinks">Напитки</button>
+        <button class="tab" data-tab="cd-bake">Печём сами</button>
+      </div>
+
+      <div class="menu-panel active" id="cd-decor">
+        <div class="dish"><span class="dish__name">Бархатные и цветные скатерти</span><span class="dish__price dish__weight">5 000 ₽</span><span class="dish__desc">за стол</span></div>
+        <div class="dish"><span class="dish__name">Подстановочные тарелки в стиле Pinterest</span><span class="dish__price dish__weight">500 ₽</span><span class="dish__desc">за комплект</span></div>
+        <div class="dish"><span class="dish__name">Декор живыми цветами в стиле Bud Vases</span><span class="dish__price dish__weight">40 000 ₽</span><span class="dish__desc">цветовая гамма на выбор, аренда ваз, античные, насыпные и чайные свечи</span></div>
+        <div class="dish"><span class="dish__name">Декор в русском стиле</span><span class="dish__price dish__weight">40 000 ₽</span><span class="dish__desc">маки, баранки, колоски, красные свечи</span></div>
+        <div class="dish"><span class="dish__name">Насыпные свечи на столах</span><span class="dish__price dish__weight">10 000 ₽</span><span class="dish__desc">20 шт., время горения 6–7 часов</span></div>
+      </div>
+      <div class="menu-panel" id="cd-drinks">
+        <div class="dish"><span class="dish__name">Свой алкоголь</span><span class="dish__price dish__weight"></span><span class="dish__desc">можно полностью привезти с собой, в том числе за сутки до мероприятия. Обязательное условие — наличие акцизных марок</span></div>
+        <div class="dish"><span class="dish__name">Пробковый сбор</span><span class="dish__price dish__weight">450 ₽</span><span class="dish__desc">с гостя</span></div>
+        <div class="dish"><span class="dish__name">Безалкогольные напитки</span><span class="dish__price dish__weight"></span><span class="dish__desc">просим не приносить с собой</span></div>
+        <div class="dish"><span class="dish__name">Горка шампанского с сухим льдом</span><span class="dish__price dish__weight">6 000 ₽</span><span class="dish__desc">шампанское заказчика</span></div>
+      </div>
+      <div class="menu-panel" id="cd-bake">
+        <div class="dish"><span class="dish__name">Торты</span><span class="dish__price dish__weight">3 000 ₽/кг</span><span class="dish__desc">минимум 2 кг; ванильный, шоколадный, красный бархат, ягодный декор</span></div>
+        <div class="dish"><span class="dish__name">Торт «Тирамису»</span><span class="dish__price dish__weight">4 000 ₽/кг</span><span class="dish__desc">минимум 2 кг</span></div>
+        <div class="dish"><span class="dish__name">Тирамису в креманках</span><span class="dish__price dish__weight">600 ₽</span><span class="dish__desc">за штуку</span></div>
+        <div class="dish"><span class="dish__name">Каравай</span><span class="dish__price dish__weight">2 500 ₽</span></div>
+        <div class="dish"><span class="dish__name">Свой торт</span><span class="dish__price dish__weight">1 000 ₽/кг</span><span class="dish__desc">сервисный сбор</span></div>
+      </div>
+      <p class="menu-footnote">Бронирование мероприятий и детали меню: <a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+    </div>
+  </div>
+
+  <!-- ПОПАП: БРОНЬ (звонок) -->
+  <div class="modal" id="booking">
+    <div class="modal__box modal__box--sm call">
+      <button class="modal__close" aria-label="Закрыть">×</button>
+      <div class="eyebrow">Leckoff · Санкт-Петербург</div>
+      <h2 class="h2">Забронировать столик</h2>
+      <p class="muted">Бронирование столов — по телефону. Позвоните нам, и мы подберём удобное время и место.</p>
+      <a class="call__phone" href="tel:+79218066517">+7 (921) 806-65-17</a>
+      <a class="btn btn--fill call__btn" href="tel:+79218066517">Позвонить</a>
+      <p class="call__hours">Ежедневно с 10:00 до 22:00</p>
+    </div>
+  </div>
+
+  <div class="cookie">
+    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="#">обработкой персональных данных</a>.</span>
+    <button class="btn btn--dark">Соглашаюсь</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
