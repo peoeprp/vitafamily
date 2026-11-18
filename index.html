@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>vita family — рестораны Санкт-Петербурга</title>
-  <meta name="description" content="Семья заведений vita family в Петербурге: кафе Leckoff на Фурштатской, банкетный ресторан Provence и шаверма-спот Bazar.">
+  <meta name="description" content="Семья заведений vita family в Петербурге: кафе Leckoff на Фурштатской, банкетный ресторан Provence, стритфуд Bazar и бизнес-консалтинг для рестораторов.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="vita family">
   <meta property="og:title" content="vita family — рестораны Санкт-Петербурга">
-  <meta property="og:description" content="Семья заведений vita family в Петербурге: кафе Leckoff на Фурштатской, банкетный ресторан Provence и шаверма-спот Bazar.">
+  <meta property="og:description" content="Семья заведений vita family в Петербурге: кафе Leckoff на Фурштатской, банкетный ресторан Provence, стритфуд Bazar и бизнес-консалтинг для рестораторов.">
   <meta property="og:url" content="https://peoeprp.github.io/vitafamily/">
   <meta property="og:image" content="https://peoeprp.github.io/vitafamily/img/leskoff/tile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="index-page">
   <!-- ПРЕЛОАДЕР -->
   <div class="preloader" aria-hidden="true">
     <div class="preloader__inner">
@@ -34,45 +34,50 @@
           <a href="leskoff.html">Leckoff · кафе</a>
           <a href="provence.html">Provence · банкетный зал</a>
           <a href="bazar.html">Bazar · стритфуд</a>
+          <a href="consulting.html">Бизнес-консалтинг</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Плашки ресторанов: слайдер на десктопе, столбик на мобильном -->
-  <main id="restaurants" class="slider">
-    <div class="tiles" id="tilesTrack">
-      <a href="leskoff.html" class="tile">
-        <div class="tile__bg" style="--img: url('img/leskoff/tile.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
-        <div class="tile__content">
-          <div class="tile__city">Санкт-Петербург</div>
-          <h2 class="tile__name">ЛЕСkoff</h2>
-          <span class="tile__more">Перейти</span>
-        </div>
-      </a>
-      <a href="provence.html" class="tile">
-        <div class="tile__bg" style="--img: url('img/provence/presidium.jpg'), linear-gradient(135deg,#b9a6d3,#7A5C9E)"></div>
-        <div class="tile__content">
-          <div class="tile__city">Санкт-Петербург · банкетный зал</div>
-          <h2 class="tile__name">Provence</h2>
-          <span class="tile__more">Перейти</span>
-        </div>
-      </a>
-      <a href="bazar.html" class="tile tile--bazar">
-        <div class="tile__bg" style="--img: repeating-linear-gradient(0deg, rgba(255,255,255,.4) 0 1px, transparent 1px 110px), repeating-linear-gradient(90deg, rgba(255,255,255,.4) 0 1px, transparent 1px 110px), linear-gradient(#C71B0F, #C71B0F)"></div>
-        <div class="tile__content">
-          <div class="tile__city">Санкт-Петербург · стритфуд</div>
-          <h2 class="tile__name tile__name--brush">BAZAR</h2>
-          <span class="tile__more">Перейти</span>
-        </div>
-      </a>
-    </div>
-    <button class="slider__arrow slider__arrow--prev" aria-label="Назад">←</button>
-    <button class="slider__arrow slider__arrow--next" aria-label="Вперёд">→</button>
-    <div class="slider__ui">
-      <div class="slider__counter"><b>01</b> / 03</div>
-      <div class="slider__dots"></div>
-    </div>
+  <!-- ВСЕ ПРОЕКТЫ: карточки (компьютер) / строки (телефон) -->
+  <main id="restaurants" class="cards">
+    <a href="leskoff.html" class="card">
+      <div class="card__bg" style="--img: url('img/leskoff/tile.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
+      <div class="card__body">
+        <span class="card__cat">кафе · с 2021</span>
+        <h2 class="card__name">ЛЕСkoff</h2>
+        <span class="card__addr">ул. Фурштатская, 50</span>
+        <span class="card__go">Перейти →</span>
+      </div>
+    </a>
+    <a href="provence.html" class="card">
+      <div class="card__bg" style="--img: url('img/provence/presidium.jpg'), linear-gradient(135deg,#b9a6d3,#7A5C9E)"></div>
+      <div class="card__body">
+        <span class="card__cat">банкетный ресторан · с 2013</span>
+        <h2 class="card__name">Provence</h2>
+        <span class="card__addr">ул. Моисеенко, 8/1</span>
+        <span class="card__go">Перейти →</span>
+      </div>
+    </a>
+    <a href="bazar.html" class="card card--bazar">
+      <div class="card__bg" style="--img: repeating-linear-gradient(0deg, rgba(255,255,255,.35) 0 1px, transparent 1px 90px), repeating-linear-gradient(90deg, rgba(255,255,255,.35) 0 1px, transparent 1px 90px), linear-gradient(#C71B0F, #C71B0F)"></div>
+      <div class="card__body">
+        <span class="card__cat">стритфуд · с 2020</span>
+        <h2 class="card__name card__name--brush">BAZAR</h2>
+        <span class="card__addr">Дегтярный пер., 1/8</span>
+        <span class="card__go">Перейти →</span>
+      </div>
+    </a>
+    <a href="consulting.html" class="card card--consult">
+      <div class="card__bg" style="--img: url('img/consulting/vitalika.jpg'), linear-gradient(160deg,#4a3428,#26140C)"></div>
+      <div class="card__body">
+        <span class="card__cat">бизнес-консалтинг</span>
+        <h2 class="card__name">Помогу открыть</h2>
+        <span class="card__addr">Виталика Ковалева</span>
+        <span class="card__go">Перейти →</span>
+      </div>
+    </a>
   </main>
 
   <section id="vacancies" class="section">
@@ -129,6 +134,7 @@
       </div>
       <div class="footer__bottom">
         <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
+        <a href="consulting.html">Бизнес-консалтинг</a>
         <a href="privacy.html">Политика конфиденциальности</a>
       </div>
       <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>

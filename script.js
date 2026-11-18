@@ -256,11 +256,22 @@ document.querySelectorAll('.projects').forEach(p => {
   const cfg = window.GALLERY_CONFIG || {};
   const per = cfg.perPage || 12;
   const thumb = (id, w) => `https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
+  const FOLDER = 'application/vnd.google-apps.folder';
+  const driveQuery = async folder => {
+    const q = encodeURIComponent(`'${folder}' in parents and trashed = false and (mimeType contains 'image/' or mimeType = '${FOLDER}')`);
+    const r = await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&orderBy=createdTime desc&pageSize=500&fields=files(id,name,mimeType,createdTime)&key=${cfg.apiKey}`);
+    if (!r.ok) throw new Error('drive ' + r.status + ' ' + (await r.text()).slice(0, 200));
+    return (await r.json()).files || [];
+  };
+  // фото из папки и из вложенных папок (на один уровень), новые сверху
   const driveList = async folder => {
-    const q = encodeURIComponent(`'${folder}' in parents and trashed = false and mimeType contains 'image/'`);
-    const r = await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&orderBy=createdTime desc&pageSize=500&fields=files(id,name)&key=${cfg.apiKey}`);
-    if (!r.ok) throw new Error('drive ' + r.status);
-    return ((await r.json()).files || []).map(f => ({ small: thumb(f.id, 900), full: thumb(f.id, 2400) }));
+    const items = await driveQuery(folder);
+    let files = items.filter(f => f.mimeType !== FOLDER);
+    for (const sub of items.filter(f => f.mimeType === FOLDER)) {
+      try { files = files.concat((await driveQuery(sub.id)).filter(f => f.mimeType !== FOLDER)); } catch (e) {}
+    }
+    files.sort((a, b) => (b.createdTime || '').localeCompare(a.createdTime || ''));
+    return files.map(f => ({ small: thumb(f.id, 900), full: thumb(f.id, 2400) }));
   };
   const tile = (p, n) => {
     const b = document.createElement('button');
@@ -451,4 +462,45 @@ document.querySelectorAll('.projects').forEach(p => {
   } else {
     status.textContent = 'Календарь обновляется — точную дату подтвердим по телефону.';
   }
+})();
+
+// Консалтинг: убрать подпись «Фото», когда фото загружено
+document.querySelectorAll('.cs-photo').forEach(el => {
+  const m = getComputedStyle(el).backgroundImage.match(/url\("?([^")]+)"?\)/);
+  if (!m) return;
+  const img = new Image();
+  img.onload = () => el.classList.add('has-photo');
+  img.src = m[1];
+});
+
+// Переход по якорям: ровно к началу секции, с учётом шапки и подменю
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]');
+  if (!a || a.hasAttribute('data-open')) return;
+  const id = a.getAttribute('href').slice(1);
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  e.preventDefault();
+  const header = document.querySelector('.header');
+  const sub = document.querySelector('.subnav');
+  const offset = (header ? header.offsetHeight : 0) + (sub ? sub.offsetHeight : 0);
+  const root = document.documentElement;
+  const go = () => window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+  root.style.scrollSnapType = 'none';
+  // закрыть открытое окно, если ссылка была внутри него
+  document.querySelectorAll('.modal.open').forEach(m => { m.classList.remove('open'); document.body.style.overflow = ''; });
+  go();
+  setTimeout(go, 450);   // поправка, если выше успели догрузиться фото
+  setTimeout(() => { root.style.scrollSnapType = ''; }, 1100);
+  history.replaceState(null, '', '#' + id);
+});
+
+// Отступ «прилипания» секций = высота шапки + подменю
+(() => {
+  const set = () => {
+    const h = document.querySelector('.header'), s = document.querySelector('.subnav');
+    document.documentElement.style.scrollPaddingTop = ((h ? h.offsetHeight : 0) + (s ? s.offsetHeight : 0)) + 'px';
+  };
+  set(); window.addEventListener('resize', set); window.addEventListener('scroll', () => requestAnimationFrame(set), { passive: true });
 })();

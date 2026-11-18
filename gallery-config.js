@@ -10,11 +10,11 @@
       Папка должна быть открыта: «Доступ → Все, у кого есть ссылка → Читатель».
    ===================================================================== */
 window.GALLERY_CONFIG = {
-  apiKey: '',
+  apiKey: 'AIzaSyDI35gA1ahdto1x_9cMQ5bvfZXffycElSw',
   folders: {
     'lk-living': '',   // Leckoff — Гостиная
     'lk-main':   '',   // Leckoff — Основной зал
-    'pv-all':    '',   // Provence — зал
+    'pv-all':    '1V971Z6aBttVdM5XgsCq6DetG3mb1Ke9Z',   // Provence — зал
     'bz-all':    ''    // Bazar
   },
   perPage: 12          // сколько фото показывать сразу, остальные — по кнопке «Показать ещё»

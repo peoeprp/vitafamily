@@ -34,6 +34,7 @@
           <a href="leskoff.html">Leckoff · кафе</a>
           <a href="provence.html">Provence · банкетный зал</a>
           <a href="bazar.html">Bazar · стритфуд</a>
+          <a href="consulting.html">Бизнес-консалтинг</a>
         </div>
       </div>
     </nav>
@@ -46,15 +47,13 @@
       <h1 class="lk-logo lk-logo--line">ЛЕС<span>KOFF</span></h1>
       <p class="vh__lead">Тихое место на Фурштатской, где завтракают весь день, едят римскую пиццу и греются брусничным чаем.</p>
       <div class="hero__actions">
-        <a href="#" class="btn btn--fill" data-open="menuModal">Меню</a>
-        <a href="#" class="btn btn--dark" data-open="banquetMenu">Банкет</a>
-        <a href="#" class="btn btn--dark" data-open="buffetMenu">Фуршет</a>
+        <a href="#menu" class="btn btn--fill">Меню</a>
+        <a href="#banquet" class="btn btn--dark">Банкет</a>
+        <a href="#buffet" class="btn btn--dark">Фуршет</a>
       </div>
       <div class="vh__info">
-        <div><b>Адрес</b>ул. Фурштатская, 50</div>
-        <div><b>Часы работы</b>Пн–Вс: 10:00–22:00</div>
-        <div><b>Завтраки</b>Ежедневно весь день</div>
-        <div><b>Связаться</b><a href="tel:+79218066517">+7 (921) 806-65-17</a><br><a href="https://t.me/Cafe_Leskoff" target="_blank" rel="noopener">Telegram @Cafe_Leskoff</a></div>
+        <div><b>Для праздников</b>Два банкетных зала: гостиная до 16 гостей и основной зал до 60</div>
+        <div><b>Телефон</b><a href="tel:+79218066517">+7 (921) 806-65-17</a></div>
       </div>
     </div>
     <div class="vh__media" style="--img: url('img/leskoff/hero-table.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
@@ -65,7 +64,7 @@
     <ul>
       <li><a href="#about">О кафе</a></li>
       <li><a href="#menu">Меню</a></li>
-      <li><a href="#private">Private events</a></li>
+      <li><a href="#private">Ваше мероприятие</a></li>
       <li><a href="#gallery">Галерея</a></li>
       <li><a href="#contacts">Контакты</a></li>
     </ul>
@@ -103,11 +102,11 @@
     </div>
   </section>
 
-  <!-- PRIVATE EVENTS -->
+  <!-- ВАШЕ МЕРОПРИЯТИЕ -->
   <section id="private" class="section">
     <div class="container">
       <div class="eyebrow reveal">Для праздников</div>
-      <h2 class="h2 reveal">Private events</h2>
+      <h2 class="h2 reveal">Ваше мероприятие</h2>
 
       <!-- Акцент: пакетное предложение -->
       <div class="package reveal">
@@ -142,7 +141,7 @@
       <!-- Выбор формата -->
       <p class="formats__q reveal">Или соберите праздник сами — какой формат вам нужен?</p>
       <div class="formats reveal">
-        <div class="format is-active" tabindex="0">
+        <div class="format is-active" id="banquet" tabindex="0">
           <div class="format__media" style="--img: url('img/leskoff/banquet-lace.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
           <div class="format__body">
             <div class="format__tag">Рассадка за столами</div>
@@ -156,7 +155,7 @@
             <a href="#" class="btn btn--dark" data-open="banquetMenu">Посмотреть меню банкета</a>
           </div>
         </div>
-        <div class="format" tabindex="0">
+        <div class="format" id="buffet" tabindex="0">
           <div class="format__media" style="--img: url('img/leskoff/news-gastro.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
           <div class="format__body">
             <div class="format__tag">Свободный формат</div>
@@ -264,6 +263,7 @@
       </div>
       <div class="footer__bottom">
         <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
+        <a href="consulting.html">Бизнес-консалтинг</a>
         <a href="privacy.html">Политика конфиденциальности</a>
       </div>
       <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>
@@ -490,7 +490,7 @@
   <div class="modal" id="banquetMenu">
     <div class="modal__box">
       <button class="modal__close" aria-label="Закрыть">×</button>
-      <div class="eyebrow">Private events · Банкет</div>
+      <div class="eyebrow">Ваше мероприятие · Банкет</div>
       <h2 class="h2">Банкетное меню</h2>
       <div class="tabs">
         <button class="tab active" data-tab="bq-1">№1 · 4 000 ₽</button>
@@ -580,7 +580,7 @@
   <div class="modal" id="buffetMenu">
     <div class="modal__box">
       <button class="modal__close" aria-label="Закрыть">×</button>
-      <div class="eyebrow">Private events · Фуршет</div>
+      <div class="eyebrow">Ваше мероприятие · Фуршет</div>
       <h2 class="h2">Фуршетное меню</h2>
       <div class="tabs">
         <button class="tab active" data-tab="bf-1">№1 · 1 600 ₽</button>
@@ -693,7 +693,7 @@
   <div class="modal" id="condModal">
     <div class="modal__box">
       <button class="modal__close" aria-label="Закрыть">×</button>
-      <div class="eyebrow">Private events</div>
+      <div class="eyebrow">Ваше мероприятие</div>
       <h2 class="h2">Дополнительно</h2>
       <div class="tabs">
         <button class="tab active" data-tab="cd-decor">Декор</button>
