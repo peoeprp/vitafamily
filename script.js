@@ -54,7 +54,7 @@ document.querySelectorAll('.tabs').forEach(tabs => {
   const box = tabs.closest('.modal__box');
   tabs.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      box.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       box.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       box.querySelector('#' + tab.dataset.tab).classList.add('active');
@@ -181,24 +181,37 @@ document.querySelectorAll('[data-tab-open]').forEach(el => {
   });
 });
 
-// Provence: калькулятор пакетного предложения
+// Provence: калькулятор пакетного предложения (ведущий и DJ по желанию, торт +1 кг = +3 000 ₽)
 const seg = document.querySelectorAll('.seg__btn');
-const noHost = document.getElementById('noHost');
+const addHost = document.getElementById('addHost');
 if (seg.length) {
   const $ = id => document.getElementById(id);
+  const CAKE_KG_PRICE = 3000, CAKE_MAX = 5;
+  let cakeExtra = 0;
+  const num = s => +String(s).replace(/\D/g, '');
+  const fmt = n => n.toLocaleString('ru-RU').replace(/\u00a0/g, ' ') + ' ₽';
   const render = () => {
     const b = document.querySelector('.seg__btn.is-active');
-    const nh = noHost && noHost.checked;
+    const host = addHost && addHost.checked;
+    const add = cakeExtra * CAKE_KG_PRICE;
     $('pkDrinks').textContent = b.dataset.drinks;
     $('pkFurshet').textContent = b.dataset.furshet;
-    $('pkCake').textContent = b.dataset.cake;
-    $('pkOld').textContent = (nh ? b.dataset.oldNh : b.dataset.old) + ' ₽';
-    $('pkNew').textContent = (nh ? b.dataset.newNh : b.dataset.new) + ' ₽';
+    $('pkCake').textContent = (num(b.dataset.cake) + cakeExtra) + ' кг';
+    $('pkOld').textContent = fmt(num(host ? b.dataset.old : b.dataset.oldNh) + add);
+    $('pkNew').textContent = fmt(num(host ? b.dataset.new : b.dataset.newNh) + add);
+    const ce = $('cakeExtra'); if (ce) ce.textContent = '+' + cakeExtra + ' кг';
+    document.querySelectorAll('.cake-step__btn').forEach(btn => {
+      const d = +btn.dataset.cake;
+      btn.disabled = (d < 0 && cakeExtra === 0) || (d > 0 && cakeExtra === CAKE_MAX);
+    });
   };
   seg.forEach(b => b.addEventListener('click', () => {
     seg.forEach(x => x.classList.toggle('is-active', x === b)); render();
   }));
-  if (noHost) noHost.addEventListener('change', render);
+  document.querySelectorAll('.cake-step__btn').forEach(btn => btn.addEventListener('click', () => {
+    cakeExtra = Math.min(CAKE_MAX, Math.max(0, cakeExtra + +btn.dataset.cake)); render();
+  }));
+  if (addHost) addHost.addEventListener('change', render);
   render();
 }
 
@@ -225,3 +238,217 @@ document.querySelectorAll('.news').forEach(box => {
   box.addEventListener('mouseleave', restart);
   mark(0); restart();
 });
+
+// Шапка: выпадающее меню «Все проекты»
+document.querySelectorAll('.projects').forEach(p => {
+  const btn = p.querySelector('.projects__btn');
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = p.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', e => { if (!p.contains(e.target)) { p.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') p.classList.remove('open'); });
+});
+
+// Галерея: только фото с Google Диска (gallery-config.js). На странице — первые perPage, остальные в окне «Все фото»
+(() => {
+  const cfg = window.GALLERY_CONFIG || {};
+  const per = cfg.perPage || 12;
+  const thumb = (id, w) => `https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
+  const driveList = async folder => {
+    const q = encodeURIComponent(`'${folder}' in parents and trashed = false and mimeType contains 'image/'`);
+    const r = await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&orderBy=createdTime desc&pageSize=500&fields=files(id,name)&key=${cfg.apiKey}`);
+    if (!r.ok) throw new Error('drive ' + r.status);
+    return ((await r.json()).files || []).map(f => ({ small: thumb(f.id, 900), full: thumb(f.id, 2400) }));
+  };
+  const tile = (p, n) => {
+    const b = document.createElement('button');
+    b.className = 'gal-item'; b.type = 'button'; b.dataset.full = p.full; b.setAttribute('aria-label', 'Фото ' + n);
+    const img = new Image(); img.loading = 'lazy'; img.alt = ''; img.src = p.small; img.onerror = () => b.remove();
+    b.appendChild(img); return b;
+  };
+
+  const all = document.querySelector('.gal-all');
+  const openAll = (photos, title) => {
+    const g = all.querySelector('.gal-all__grid'); g.innerHTML = '';
+    photos.forEach((p, k) => g.appendChild(tile(p, k + 1)));
+    all.querySelector('.gal-all__title').textContent = title;
+    all.classList.add('open'); all.scrollTop = 0; document.body.style.overflow = 'hidden';
+  };
+  if (all) {
+    const close = () => { all.classList.remove('open'); document.body.style.overflow = ''; };
+    all.querySelector('.gal-all__close').addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && all.classList.contains('open') && !document.querySelector('.lightbox.open')) close(); });
+  }
+
+  const setup = async (grid, sec) => {
+    const key = grid.dataset.galPanel;
+    let photos = [];
+    const folder = cfg.folders && cfg.folders[key];
+    if (cfg.apiKey && folder) {
+      try { photos = await driveList(folder); } catch (e) { console.warn('Галерея: не удалось загрузить фото с Google Диска', e); }
+    }
+    grid.innerHTML = '';
+    photos.slice(0, per).forEach((p, k) => grid.appendChild(tile(p, k + 1)));
+    grid.dataset.count = photos.length;
+    if (photos.length > per) {
+      const more = document.createElement('button');
+      more.type = 'button'; more.className = 'btn btn--dark gal-more';
+      more.innerHTML = `Смотреть все фото <span>${photos.length}</span>`;
+      const tab = sec.querySelector(`.gal-tab[data-gal="${key}"]`);
+      more.addEventListener('click', () => openAll(photos, tab ? 'Фото · ' + tab.textContent : 'Все фото'));
+      grid.after(more); grid._more = more;
+    }
+    // пустые вкладки и галереи прячем
+    const tab = sec.querySelector(`.gal-tab[data-gal="${key}"]`);
+    if (tab && !photos.length) tab.hidden = true;
+  };
+
+  document.querySelectorAll('.gal-sec').forEach(async sec => {
+    const grids = [...sec.querySelectorAll('.gal-grid')];
+    const activate = key => {
+      sec.querySelectorAll('.gal-tab').forEach(x => x.classList.toggle('is-active', x.dataset.gal === key));
+      grids.forEach(g => { g.classList.toggle('is-active', g.dataset.galPanel === key); if (g._more) g._more.style.display = g.dataset.galPanel === key ? '' : 'none'; });
+    };
+    sec.querySelectorAll('.gal-tab').forEach(t => t.addEventListener('click', () => activate(t.dataset.gal)));
+    await Promise.all(grids.map(g => setup(g, sec)));
+    const first = grids.find(g => +g.dataset.count > 0);
+    const empty = !first;
+    if (empty && sec.hasAttribute('data-hide-empty')) {
+      sec.hidden = true;
+      document.querySelectorAll(`.subnav a[href="#${sec.id}"]`).forEach(a => a.parentElement.hidden = true);
+    } else if (first) activate(first.dataset.galPanel);
+    const tabs = sec.querySelector('.gal-tabs');
+    if (tabs && [...tabs.children].filter(t => !t.hidden).length < 2) tabs.hidden = true;
+  });
+
+  // просмотр фото крупно
+  const lb = document.querySelector('.lightbox');
+  if (!lb) return;
+  const big = lb.querySelector('img');
+  let list = [], i = 0;
+  const show = () => { big.src = list[i].dataset.full; };
+  const close = () => { lb.classList.remove('open'); if (!all || !all.classList.contains('open')) document.body.style.overflow = ''; };
+  const step = d => { i = (i + d + list.length) % list.length; show(); };
+  document.addEventListener('click', e => {
+    const it = e.target.closest('.gal-item');
+    if (!it) return;
+    list = [...it.parentElement.querySelectorAll('.gal-item')]; i = list.indexOf(it);
+    show(); lb.classList.add('open'); document.body.style.overflow = 'hidden';
+  });
+  lb.querySelector('.lightbox__nav--prev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
+  lb.querySelector('.lightbox__nav--next').addEventListener('click', e => { e.stopPropagation(); step(1); });
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lightbox__close')) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+})();
+
+// Provence: календарь бронирования (занятые даты — из Google Таблицы, booking-config.js)
+(() => {
+  const cal = document.querySelector('[data-booking]');
+  if (!cal) return;
+  const cfg = window.BOOKING_CONFIG || {};
+  const MONTHS = ['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+  const MONTHS_GEN = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+  const DAYS = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const maxMonths = cfg.monthsAhead || 18;
+  let view = new Date(today.getFullYear(), today.getMonth(), 1);
+  let busy = {};            // 'YYYY-MM-DD' -> {status, note}
+  let loaded = false;
+  const key = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const $ = s => document.querySelector(s);
+
+  const parseCSV = text => {
+    const rows = []; let row = [], cell = '', q = false;
+    for (let k = 0; k < text.length; k++) {
+      const ch = text[k];
+      if (q) { if (ch === '"' && text[k + 1] === '"') { cell += '"'; k++; } else if (ch === '"') q = false; else cell += ch; }
+      else if (ch === '"') q = true;
+      else if (ch === ',') { row.push(cell); cell = ''; }
+      else if (ch === '\n' || ch === '\r') { if (ch === '\r' && text[k + 1] === '\n') k++; row.push(cell); rows.push(row); row = []; cell = ''; }
+      else cell += ch;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows;
+  };
+  const parseDate = s => {
+    s = (s || '').trim(); let m;
+    if ((m = s.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})/))) return new Date(+m[3], +m[2] - 1, +m[1]);
+    if ((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/))) return new Date(+m[1], +m[2] - 1, +m[3]);
+    if ((m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/))) return new Date(+m[3], +m[1] - 1, +m[2]);
+    return null;
+  };
+
+  const render = () => {
+    $('.bk__month').textContent = `${MONTHS[view.getMonth()]} ${view.getFullYear()}`;
+    const days = cal.querySelector('.bk__days'); days.innerHTML = '';
+    const lead = (view.getDay() + 6) % 7;
+    for (let k = 0; k < lead; k++) days.appendChild(document.createElement('span'));
+    const n = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+    for (let d = 1; d <= n; d++) {
+      const date = new Date(view.getFullYear(), view.getMonth(), d);
+      const info = busy[key(date)];
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'bk__day'; b.textContent = d; b.dataset.date = key(date);
+      if (date < today) { b.classList.add('is-past'); b.disabled = true; }
+      else if (info && info.status === 'busy') { b.classList.add('is-busy'); b.disabled = true; b.title = 'Занято'; }
+      else if (info && info.status === 'hold') { b.classList.add('is-hold'); b.title = 'Уточняйте'; }
+      else b.classList.add('is-free');
+      if (+date === +today) b.classList.add('is-today');
+      days.appendChild(b);
+    }
+    const first = new Date(today.getFullYear(), today.getMonth(), 1);
+    cal.querySelector('[data-step="-1"]').disabled = view <= first;
+    cal.querySelector('[data-step="1"]').disabled = view >= new Date(first.getFullYear(), first.getMonth() + maxMonths, 1);
+  };
+
+  const pick = btn => {
+    cal.querySelectorAll('.bk__day.is-picked').forEach(x => x.classList.remove('is-picked'));
+    btn.classList.add('is-picked');
+    const [y, m, d] = btn.dataset.date.split('-').map(Number);
+    const date = new Date(y, m - 1, d);
+    const human = `${d} ${MONTHS_GEN[m - 1]} ${y}`;
+    const info = busy[btn.dataset.date];
+    $('.bk__date').textContent = `${human}, ${DAYS[date.getDay()]}`;
+    $('.bk__note').textContent = info && info.status === 'hold'
+      ? 'На эту дату есть предварительная бронь — позвоните, подскажем.' + (info.note ? ' ' + info.note : '')
+      : (loaded ? 'Дата свободна' + (info && info.note ? ' · ' + info.note : '') : 'Уточним наличие по телефону');
+    const text = encodeURIComponent(`Здравствуйте! Хочу забронировать банкетный зал Provence на ${human}.`);
+    const wa = document.querySelector('[data-bk-wa]');
+    if (wa && cfg.whatsapp) wa.href = `https://wa.me/${cfg.whatsapp}?text=${text}`;
+    document.querySelector('.bk__picked').classList.add('is-set');
+  };
+
+  cal.addEventListener('click', e => {
+    const nav = e.target.closest('.bk__nav');
+    if (nav) { view = new Date(view.getFullYear(), view.getMonth() + +nav.dataset.step, 1); render(); return; }
+    const day = e.target.closest('.bk__day');
+    if (day && !day.disabled) pick(day);
+  });
+
+  const status = cal.querySelector('.bk__status');
+  render();
+  if (cfg.sheetCsvUrl) {
+    status.textContent = 'Загружаем календарь…';
+    fetch(cfg.sheetCsvUrl + (cfg.sheetCsvUrl.includes('?') ? '&' : '?') + 't=' + Date.now())
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(text => {
+        parseCSV(text).slice(1).forEach(([d, s, note]) => {
+          const date = parseDate(d); if (!date) return;
+          const st = (s || '').trim().toLowerCase();
+          const status = st.startsWith('занят') ? 'busy' : st.startsWith('предвар') ? 'hold' : 'free';
+          busy[key(date)] = { status, note: (note || '').trim() };
+        });
+        loaded = true; status.textContent = ''; render();
+      })
+      .catch(() => { status.textContent = 'Не удалось загрузить календарь — уточните дату по телефону.'; });
+  } else {
+    status.textContent = 'Календарь обновляется — точную дату подтвердим по телефону.';
+  }
+})();

@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://peoeprp.github.io/vitafamily/leskoff.html">
   <meta property="og:image" content="https://peoeprp.github.io/vitafamily/img/leskoff/hero-table.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="theme-leckoff">
@@ -27,39 +27,37 @@
   <header class="header">
     <a href="index.html" class="logo">vita family</a>
     <nav class="nav">
-      <a href="index.html">Все рестораны</a>
-      <a href="#menu">Меню</a>
-      <!-- <a href="#" data-open="booking">Резерв</a> -->
-      <a href="#contacts">Контакты</a>
-    </nav>
-    <button class="burger" aria-label="Меню">☰</button>
-  </header>
-
-  <!-- HERO: лес в центре города -->
-  <section class="lk-hero">
-    <svg class="lk-hero__curve" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 640 C 260 520, 380 900, 700 760 S 1180 260, 1500 380" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M980 -40 C 900 160, 1240 220, 1180 420" fill="none" stroke="currentColor" stroke-width="1"/></svg>
-    <div class="container lk-hero__grid">
-      <div class="lk-hero__text">
-        <div class="lk-kicker">кафе · Санкт-Петербург</div>
-        <h1 class="lk-logo">ЛЕС<span class="lk-logo__script">koff</span></h1>
-        <p class="lk-hero__lead">Тихое место на Фурштатской, где завтракают весь день, едят римскую пиццу и греются брусничным чаем.</p>
-        <div class="hero__actions">
-          <a href="#" class="btn btn--fill" data-open="menuModal">Меню</a>
-          <a href="#" class="btn btn--dark" data-open="barModal">Напитки</a>
+      <div class="projects">
+        <button class="projects__btn" aria-expanded="false" aria-haspopup="true">Все проекты <i aria-hidden="true">▾</i></button>
+        <div class="projects__menu">
+          <a href="index.html">Главная</a>
+          <a href="leskoff.html">Leckoff · кафе</a>
+          <a href="provence.html">Provence · банкетный зал</a>
+          <a href="bazar.html">Bazar · стритфуд</a>
         </div>
       </div>
-      <div class="lk-hero__media">
-        <div class="lk-arch" style="--img: url('img/leskoff/hero-table.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
-        <svg class="lk-leaf" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 118 C30 80 30 40 30 4" fill="none" stroke="currentColor" stroke-width="1.4"/>
-<g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M30 96 C18 92 10 84 8 72 C20 74 28 82 30 96Z"/><path d="M30 80 C42 76 50 68 52 56 C40 58 32 66 30 80Z"/><path d="M30 62 C18 58 12 50 10 40 C22 42 28 50 30 62Z"/><path d="M30 44 C40 40 46 32 48 22 C38 24 32 32 30 44Z"/><path d="M30 26 C22 22 18 16 18 8 C26 10 30 16 30 26Z"/></g></svg>
+    </nav>
+  </header>
+
+  <!-- HERO: текст и контакты слева, фото справа на весь экран -->
+  <section class="vh vh--leckoff">
+    <div class="vh__text">
+      <div class="lk-kicker">кафе · СПб, ул. Фурштатская, 50</div>
+      <h1 class="lk-logo lk-logo--line">ЛЕС<span>KOFF</span></h1>
+      <p class="vh__lead">Тихое место на Фурштатской, где завтракают весь день, едят римскую пиццу и греются брусничным чаем.</p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--fill" data-open="menuModal">Меню</a>
+        <a href="#" class="btn btn--dark" data-open="banquetMenu">Банкет</a>
+        <a href="#" class="btn btn--dark" data-open="buffetMenu">Фуршет</a>
+      </div>
+      <div class="vh__info">
+        <div><b>Адрес</b>ул. Фурштатская, 50</div>
+        <div><b>Часы работы</b>Пн–Вс: 10:00–22:00</div>
+        <div><b>Завтраки</b>Ежедневно весь день</div>
+        <div><b>Связаться</b><a href="tel:+79218066517">+7 (921) 806-65-17</a><br><a href="https://t.me/Cafe_Leskoff" target="_blank" rel="noopener">Telegram @Cafe_Leskoff</a></div>
       </div>
     </div>
-    <div class="container lk-hero__info">
-      <div><b>Адрес</b>ул. Фурштатская, 50</div>
-      <div><b>Часы работы</b>Пн–Вс: 10:00–22:00</div>
-      <div><b>Завтраки</b>Ежедневно весь день для вас!</div>
-      <div><b>Телефон</b><a href="tel:+79218066517">+7 (921) 806-65-17</a></div>
-    </div>
+    <div class="vh__media" style="--img: url('img/leskoff/hero-table.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
   </section>
 
   <!-- Якорное подменю -->
@@ -67,9 +65,8 @@
     <ul>
       <li><a href="#about">О кафе</a></li>
       <li><a href="#menu">Меню</a></li>
-      <li><a href="#bar">Напитки</a></li>
-      <li><a href="#events">Новости</a></li>
       <li><a href="#private">Private events</a></li>
+      <li><a href="#gallery">Галерея</a></li>
       <li><a href="#contacts">Контакты</a></li>
     </ul>
   </nav>
@@ -86,11 +83,6 @@
         <p>Готовит та же команда шефа, что и банкетный ресторан Provence: понятная домашняя кухня в аккуратной подаче — от сырников и шакшуки до утиной ножки с грушей.</p>
       </div>
     </div>
-    <div class="container lk-pillars reveal">
-      <div class="lk-pillar"><span class="lk-pillar__n">01</span><b>Завтраки весь день</b><p>Конструктор завтраков, русский завтрак с щучьей икрой, сырники и каши.</p></div>
-      <div class="lk-pillar"><span class="lk-pillar__n">02</span><b>Римская пицца</b><p>Прямоугольная, 25 × 20 см, на хрустящем тесте — от «Маргариты» до груши с горгондзолой.</p></div>
-      <div class="lk-pillar"><span class="lk-pillar__n">03</span><b>Гостиная до 16 гостей</b><p>Для дней рождения, девичников и семейных ужинов. Фуршет — до 60 гостей.</p></div>
-    </div>
   </section>
 
   <!-- МЕНЮ -->
@@ -101,89 +93,15 @@
         <div class="eyebrow">Кухня</div>
         <h2 class="h2">Меню</h2>
         <p class="muted">Завтраки подаём весь день: конструктор из омлета, яичницы или скрэмбла с любимыми топпингами, сырники, каши, шакшука и русский завтрак на двоих с щучьей икрой.</p>
-        <p class="muted">А ещё — римская пицца на хрустящем тесте, супы, паста, салаты и горячее: от борща с белорусским салом до утиной ножки с грушей.</p>
-        <a href="#" class="btn btn--dark" data-open="menuModal">Смотреть меню</a>
+        <p class="muted">А ещё — римская пицца на хрустящем тесте, супы, паста, салаты и горячее: от борща с белорусским салом до утиной ножки с грушей. В баре — фирменный кофе, авторский чай, домашние лимонады, вино и настойки.</p>
+        <div class="menu-btns">
+          <a href="#" class="btn btn--fill" data-open="menuModal">Основное меню</a>
+          <a href="#" class="btn btn--dark" data-open="banquetMenu">Банкет</a>
+          <a href="#" class="btn btn--dark" data-open="buffetMenu">Фуршет</a>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- НАПИТКИ -->
-  <section id="bar" class="section section--dark">
-    <div class="container split split--rev reveal">
-      <div class="split__media lk-arch-media" style="--img: url('img/leskoff/bar-table.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
-      <div class="text">
-        <div class="eyebrow">Напитки</div>
-        <h2 class="h2">Бар</h2>
-        <p class="muted">Фирменный кофе Leckoff и лавандовый раф, брусничный чай с апельсином и розмарином, облепиховый пунш и домашние лимонады — от лайм-ванили до вишни с лаймом.</p>
-        <p class="muted">Вечером — игристое и вино, спритц и домашние настойки: брусничная, облепиховая, хреновуха.</p>
-        <a href="#" class="btn" data-open="barModal">Смотреть барную карту</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- НОВОСТИ: слайдер -->
-  <section id="events" class="section lk-news-sec">
-    <div class="container">
-      <div class="news__head reveal">
-        <div>
-          <div class="eyebrow">Новости и события</div>
-          <h2 class="h2">Что нового<br>в Leckoff</h2>
-        </div>
-        <div class="news__nav">
-          <span class="news__count"><b>01</b> / 03</span>
-          <button class="news__arrow" data-dir="-1" aria-label="Предыдущая новость">←</button>
-          <button class="news__arrow" data-dir="1" aria-label="Следующая новость">→</button>
-        </div>
-      </div>
-      <div class="news reveal" data-autoplay="7000">
-        <div class="news__track">
-        <article class="news__slide">
-          <div class="news__media lk-arch lk-arch--sm" style="--img: url('img/leskoff/news-music.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
-          <div class="news__body">
-            <div class="eyebrow">Совсем скоро!</div>
-            <h3 class="news__title">Музыкальные вечера</h3>
-            <p class="muted">Живая музыка, вкусная еда и закуски от шефа. Будет шумно, вкусно и по-домашнему. Бронируйте столы заранее.</p>
-            <p class="event__meta">Условия проведения в конкретную дату уточняйте по телефону</p>
-            <div class="hero__actions"><a href="#" class="btn btn--fill" data-open="booking">Забронировать</a></div>
-          </div>
-        </article>
-        <article class="news__slide">
-          <a href="img/boxes.pdf" target="_blank" rel="noopener" class="news__media lk-arch lk-arch--sm" aria-label="Меню гастро-боксов (PDF)" style="--img: url('img/leskoff/gastro-boxes.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></a>
-          <div class="news__body">
-            <div class="eyebrow">Новое</div>
-            <h3 class="news__title">Праздничные гастро-боксы</h3>
-            <p class="muted">Салаты, канапе, брускетты и шашлычки в красивой упаковке — по предзаказу к вашему столу. Самовывоз с Фурштатской, 50 или доставка Яндекс Go. Заказ: <a href="tel:+79218066517">+7 (921) 806-65-17</a>.</p>
-            <p class="event__meta">Салаты — 2 500 ₽/кг, гастро-боксы — от 4 200 ₽</p>
-            <div class="hero__actions"><a href="img/boxes.pdf" target="_blank" rel="noopener" class="btn btn--fill">Смотреть меню боксов (PDF)</a></div>
-          </div>
-        </article>
-        <article class="news__slide">
-          <div class="news__media lk-arch lk-arch--sm" style="--img: url('img/leskoff/news-banquet.jpg'), linear-gradient(135deg,#6b4a33,#26140C)"></div>
-          <div class="news__body">
-            <div class="eyebrow">Пакетное предложение</div>
-            <h3 class="news__title">Праздник на 20 гостей</h3>
-            <p class="muted">Банкетное меню, фуршет из 40 канапе, торт, горка шампанского, живые цветы и 6 часов аренды в подарок.</p>
-            <p class="event__meta">200 000 ₽ вместо 235 000 ₽ · сервисный сбор не включён</p>
-            <div class="hero__actions"><a href="#private" class="btn btn--fill">Подробнее</a></div>
-          </div>
-        </article>
-        </div>
-        <div class="news__dots"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ГАЛЕРЕЯ -->
-<!--   <section class="section">
-    <div class="container">
-      <div class="gallery reveal">
-        <div style="--img: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80'), linear-gradient(#b08a66,#6b4a33)"></div>
-        <div style="--img: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80'), linear-gradient(#a3754f,#5a3a2a)"></div>
-        <div style="--img: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80'), linear-gradient(#8f6a4c,#3d2a1f)"></div>
-        <div style="--img: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80'), linear-gradient(#c49b70,#7a4a2e)"></div>
-      </div>
-    </div>
-  </section> -->
 
   <!-- PRIVATE EVENTS -->
   <section id="private" class="section">
@@ -290,6 +208,22 @@
     </div>
   </section>
 
+  <!-- ГАЛЕРЕЯ (фото подтягиваются с Google Диска) -->
+  <section id="gallery" class="section gal-sec" data-hide-empty>
+    <div class="container reveal">
+      <div class="eyebrow">Фото</div>
+      <h2 class="h2">Галерея</h2>
+      <div class="gal-tabs">
+        <button class="gal-tab is-active" data-gal="lk-living">Гостиная</button>
+        <button class="gal-tab" data-gal="lk-main">Основной зал</button>
+      </div>
+      <div class="gal-grid is-active" data-gal-panel="lk-living">
+      </div>
+      <div class="gal-grid" data-gal-panel="lk-main">
+      </div>
+    </div>
+  </section>
+
   <!-- ПОДВАЛ (общий для всех страниц) -->
   <footer id="contacts" class="footer">
     <div class="container">
@@ -306,14 +240,14 @@
           <h4><a href="provence.html" class="footer__title">Provence <span>→</span></a></h4>
           <p>Банкетный ресторан · Санкт-Петербург</p>
           <p>ул. Моисеенко, 8/1</p>
-          <p class="footer__phone"><a href="tel:+79219966517">+7 (921) 996-65-17</a></p>
+          <p class="footer__phone"><a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Telegram-канал Provence</a></p>
           <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
         </div>
         <div>
           <h4><a href="bazar.html" class="footer__title">Bazar <span>→</span></a></h4>
-          <p>Shawarma spot · Санкт-Петербург</p>
-          <p>ул. Моисеенко, 8/1А</p>
-          <p>вход левее главного входа в Provence</p>
+          <p>Стритфуд · Санкт-Петербург</p>
+          <p>Дегтярный пер., 1/8</p>
           <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
         </div>
         <div>
@@ -324,11 +258,13 @@
           <p><a href="https://instagram.com/vita_lika" target="_blank" rel="noopener">@vita_lika<sup>*</sup></a></p>
           <p class="footer__gap"><a href="https://vk.ru/provencebanket" target="_blank" rel="noopener">ВК: provencebanket</a></p>
           <p><a href="https://vk.ru/dvorec_brakosochetaniya_furshet" target="_blank" rel="noopener">ВК: dvorec_brakosochetaniya_furshet</a></p>
+          <p><a href="#" target="_blank" rel="noopener">ВК: Вита Банкетова</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Telegram-канал Provence</a></p>
         </div>
       </div>
       <div class="footer__bottom">
         <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
-        <a href="#">Политика конфиденциальности</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
       </div>
       <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>
     </div>
@@ -339,7 +275,8 @@
     <div class="modal__box">
       <button class="modal__close" aria-label="Закрыть">×</button>
       <div class="eyebrow">Leckoff</div>
-      <h2 class="h2">Меню</h2>
+      <h2 class="h2">Меню и бар</h2>
+      <div class="tabs-label">Кухня</div>
       <div class="tabs">
         <button class="tab active" data-tab="f-constructor">Конструктор завтраков</button>
         <button class="tab" data-tab="f-breakfast">Завтраки</button>
@@ -350,6 +287,15 @@
         <button class="tab" data-tab="f-hot">Горячие блюда</button>
         <button class="tab" data-tab="f-bread">Хлеб</button>
         <button class="tab" data-tab="f-dessert">Десерты</button>
+      </div>
+      <div class="tabs-label">Бар</div>
+      <div class="tabs">
+        <button class="tab" data-tab="b-coffee">Кофе</button>
+        <button class="tab" data-tab="b-tea">Чай</button>
+        <button class="tab" data-tab="b-soft">Лимонады и напитки</button>
+        <button class="tab" data-tab="b-wine">Вино</button>
+        <button class="tab" data-tab="b-cocktails">Коктейли и пиво</button>
+        <button class="tab" data-tab="b-strong">Крепкий алкоголь</button>
       </div>
 
       <div class="menu-panel active" id="f-constructor">
@@ -442,25 +388,7 @@
         <div class="dish"><span class="dish__name">Бискотти</span><span class="dish__price">150 ₽</span></div>
       </div>
       <p class="menu-footnote">Сервисный сбор за обслуживание компании более 8 человек — 10%</p>
-    </div>
-  </div>
-
-  <!-- ПОПАП: БАР -->
-  <div class="modal" id="barModal">
-    <div class="modal__box">
-      <button class="modal__close" aria-label="Закрыть">×</button>
-      <div class="eyebrow">Leckoff</div>
-      <h2 class="h2">Барная карта</h2>
-      <div class="tabs">
-        <button class="tab active" data-tab="b-coffee">Кофе</button>
-        <button class="tab" data-tab="b-tea">Чай</button>
-        <button class="tab" data-tab="b-soft">Лимонады и напитки</button>
-        <button class="tab" data-tab="b-wine">Вино</button>
-        <button class="tab" data-tab="b-cocktails">Коктейли и пиво</button>
-        <button class="tab" data-tab="b-strong">Крепкий алкоголь</button>
-      </div>
-
-      <div class="menu-panel active" id="b-coffee">
+      <div class="menu-panel" id="b-coffee">
         <div class="dish"><span class="dish__name">Эспрессо</span><span class="dish__price">190 ₽</span></div>
         <div class="dish"><span class="dish__name">Двойной эспрессо</span><span class="dish__price">250 ₽</span></div>
         <div class="dish"><span class="dish__name">Американо</span><span class="dish__price">210 / 260 ₽</span><span class="dish__desc">0,2 л / 0,3 л</span></div>
@@ -811,10 +739,28 @@
   </div>
 
   <div class="cookie">
-    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="#">обработкой персональных данных</a>.</span>
+    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">обработкой персональных данных</a>.</span>
     <button class="btn btn--dark">Соглашаюсь</button>
   </div>
 
+  <!-- ВСЕ ФОТО -->
+  <div class="gal-all" aria-hidden="true">
+    <div class="gal-all__bar">
+      <b class="gal-all__title">Все фото</b>
+      <button class="gal-all__close" aria-label="Закрыть">×</button>
+    </div>
+    <div class="gal-all__grid"></div>
+  </div>
+
+  <!-- ПРОСМОТР ФОТО -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Закрыть">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Предыдущее фото">←</button>
+    <img alt="">
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Следующее фото">→</button>
+  </div>
+
+  <script src="gallery-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

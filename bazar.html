@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bazar — shawarma spot, Санкт-Петербург</title>
-  <meta name="description" content="Bazar — шаверма-спот на ул. Моисеенко, 8/1А: шаверма с курицей, креветками, говядиной и сейтаном, фри, кофе и лимонады.">
+  <title>Bazar — стритфуд, Санкт-Петербург</title>
+  <meta name="description" content="Bazar — стритфуд на Дегтярном переулке, 1/8: шаверма на вынос шаверма с курицей, креветками, говядиной и сейтаном, фри, кофе и лимонады.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="vita family">
-  <meta property="og:title" content="Bazar — shawarma spot, Санкт-Петербург">
-  <meta property="og:description" content="Bazar — шаверма-спот на ул. Моисеенко, 8/1А: шаверма с курицей, креветками, говядиной и сейтаном, фри, кофе и лимонады.">
+  <meta property="og:title" content="Bazar — стритфуд, Санкт-Петербург">
+  <meta property="og:description" content="Bazar — стритфуд на Дегтярном переулке, 1/8: шаверма на вынос шаверма с курицей, креветками, говядиной и сейтаном, фри, кофе и лимонады.">
   <meta property="og:url" content="https://peoeprp.github.io/vitafamily/bazar.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&family=Permanent+Marker&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,34 +26,36 @@
   <header class="header">
     <a href="index.html" class="logo">vita family</a>
     <nav class="nav">
-      <a href="index.html">Все рестораны</a>
-      <a href="#menu">Меню</a>
-      <a href="#find">Как найти</a>
-      <a href="#contacts">Контакты</a>
+      <div class="projects">
+        <button class="projects__btn" aria-expanded="false" aria-haspopup="true">Все проекты <i aria-hidden="true">▾</i></button>
+        <div class="projects__menu">
+          <a href="index.html">Главная</a>
+          <a href="leskoff.html">Leckoff · кафе</a>
+          <a href="provence.html">Provence · банкетный зал</a>
+          <a href="bazar.html">Bazar · стритфуд</a>
+        </div>
+      </div>
     </nav>
-    <button class="burger" aria-label="Меню">☰</button>
   </header>
 
   <!-- HERO: красная сетка из брендбука -->
   <section class="bz-hero">
     <div class="container bz-hero__inner">
+      <div class="bz-hero__kicker">стритфуд · СПб, Дегтярный пер., 1/8</div>
       <div class="bz-hero__logo">
         <h1 class="bz-brush">BAZAR</h1>
-        <span class="bz-hero__sub">SHAWARMA SPOT</span>
+        <span class="bz-hero__sub">STREET FOOD</span>
       </div>
       <p class="bz-hero__tag">I love it before I try it</p>
       <div class="bz-hero__actions">
         <a href="#menu" class="btn bz-btn bz-btn--white">Меню</a>
         <a href="#find" class="btn bz-btn">Как нас найти</a>
       </div>
-      <div class="bz-hero__meta">
-        <span>Санкт-Петербург</span>
-        <span>ул. Моисеенко, 8/1А · вход левее Provence</span>
-      </div>
+      <div class="bz-hero__meta"><span>окошко с горячей шавермой на вынос</span></div>
     </div>
   </section>
 
-  <div class="bz-marquee" aria-hidden="true"><div class="bz-marquee__track"><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · SHAWARMA SPOT · </span><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · SHAWARMA SPOT · </span><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · SHAWARMA SPOT · </span><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · SHAWARMA SPOT · </span></div></div>
+  <div class="bz-marquee" aria-hidden="true"><div class="bz-marquee__track"><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · НА ВЫНОС · </span><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · НА ВЫНОС · </span><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · НА ВЫНОС · </span><span>ШАВЕРМА · STREET FOOD · КОФЕ · ФРИ · I LOVE IT BEFORE I TRY IT · ЛИМОНАДЫ · НА ВЫНОС · </span></div></div>
 
   <!-- О НАС -->
   <section id="about" class="section">
@@ -174,14 +176,30 @@
   <section id="find" class="section">
     <div class="container bz-find reveal">
       <div>
-        <div class="eyebrow">02. Как нас найти</div>
-        <h2 class="h2">ул. Моисеенко, 8/1А</h2>
-        <p class="bz-find__text">Мы в одном здании с банкетным рестораном Provence. Наш вход — <b>левее</b> главного входа в Provence: ищите красную вывеску BAZAR.</p>
-        <a class="btn btn--fill" href="https://yandex.ru/maps/-/CXf7vB0g" target="_blank" rel="noopener">Открыть на карте</a>
+        <div class="eyebrow">02. Шаверма на вынос</div>
+        <h2 class="h2">Дегтярный пер., 1/8</h2>
+        <p class="bz-find__text">Bazar — это окошко с горячей едой: подходите, заказывайте и забирайте с собой сочную шаверму, хрустящую фри и кофе. Готовим при вас — <b>пара минут</b>, и можно идти дальше. Ищите красную вывеску BAZAR.</p>
+        <a class="btn btn--fill" href="https://yandex.ru/maps/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%94%D0%B5%D0%B3%D1%82%D1%8F%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%201%2F8" target="_blank" rel="noopener">Открыть на карте</a>
       </div>
-      <div class="bz-map">
-        <iframe src="https://yandex.ru/map-widget/v1/-/CXf7vB0g" title="Bazar на Яндекс Картах: ул. Моисеенко, 8/1А" loading="lazy" allowfullscreen></iframe>
-        <p class="bz-map__cap">ул. Моисеенко, 8/1А · вход левее главного входа в Provence</p>
+      <div class="bz-media">
+        <div class="bz-map">
+          <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%94%D0%B5%D0%B3%D1%82%D1%8F%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%201%2F8&amp;z=17" title="Bazar на Яндекс Картах: Дегтярный пер., 1/8" loading="lazy" allowfullscreen></iframe>
+          <p class="bz-map__cap">Дегтярный пер., 1/8 · Санкт-Петербург</p>
+        </div>
+        <figure class="bz-photo">
+          <div class="bz-photo__img" style="--img: url('img/bazar/entrance.jpg')"><span>Фото входа</span></div>
+          <figcaption>Окошко BAZAR — еда с собой</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ГАЛЕРЕЯ (фото подтягиваются с Google Диска) -->
+  <section id="gallery" class="section gal-sec" data-hide-empty>
+    <div class="container reveal">
+      <div class="eyebrow">Фото</div>
+      <h2 class="h2">Галерея</h2>
+      <div class="gal-grid is-active" data-gal-panel="bz-all">
       </div>
     </div>
   </section>
@@ -202,14 +220,14 @@
           <h4><a href="provence.html" class="footer__title">Provence <span>→</span></a></h4>
           <p>Банкетный ресторан · Санкт-Петербург</p>
           <p>ул. Моисеенко, 8/1</p>
-          <p class="footer__phone"><a href="tel:+79219966517">+7 (921) 996-65-17</a></p>
+          <p class="footer__phone"><a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Telegram-канал Provence</a></p>
           <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
         </div>
         <div>
           <h4><a href="bazar.html" class="footer__title">Bazar <span>→</span></a></h4>
-          <p>Shawarma spot · Санкт-Петербург</p>
-          <p>ул. Моисеенко, 8/1А</p>
-          <p>вход левее главного входа в Provence</p>
+          <p>Стритфуд · Санкт-Петербург</p>
+          <p>Дегтярный пер., 1/8</p>
           <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
         </div>
         <div>
@@ -220,21 +238,41 @@
           <p><a href="https://instagram.com/vita_lika" target="_blank" rel="noopener">@vita_lika<sup>*</sup></a></p>
           <p class="footer__gap"><a href="https://vk.ru/provencebanket" target="_blank" rel="noopener">ВК: provencebanket</a></p>
           <p><a href="https://vk.ru/dvorec_brakosochetaniya_furshet" target="_blank" rel="noopener">ВК: dvorec_brakosochetaniya_furshet</a></p>
+          <p><a href="#" target="_blank" rel="noopener">ВК: Вита Банкетова</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Telegram-канал Provence</a></p>
         </div>
       </div>
       <div class="footer__bottom">
         <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
-        <a href="#">Политика конфиденциальности</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
       </div>
       <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>
     </div>
   </footer>
 
   <div class="cookie">
-    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="#">обработкой персональных данных</a>.</span>
+    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">обработкой персональных данных</a>.</span>
     <button class="btn btn--dark">Соглашаюсь</button>
   </div>
 
+  <!-- ВСЕ ФОТО -->
+  <div class="gal-all" aria-hidden="true">
+    <div class="gal-all__bar">
+      <b class="gal-all__title">Все фото</b>
+      <button class="gal-all__close" aria-label="Закрыть">×</button>
+    </div>
+    <div class="gal-all__grid"></div>
+  </div>
+
+  <!-- ПРОСМОТР ФОТО -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Закрыть">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" aria-label="Предыдущее фото">←</button>
+    <img alt="">
+    <button class="lightbox__nav lightbox__nav--next" aria-label="Следующее фото">→</button>
+  </div>
+
+  <script src="gallery-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -27,11 +27,16 @@
   <header class="header">
     <a href="index.html" class="logo">vita family</a>
     <nav class="nav">
-      <a href="#restaurants">Рестораны</a>
-      <!-- <a href="#vacancies">Вакансии</a> -->
-      <!-- <a href="#contacts">Контакты</a> -->
+      <div class="projects">
+        <button class="projects__btn" aria-expanded="false" aria-haspopup="true">Все проекты <i aria-hidden="true">▾</i></button>
+        <div class="projects__menu">
+          <a href="index.html">Главная</a>
+          <a href="leskoff.html">Leckoff · кафе</a>
+          <a href="provence.html">Provence · банкетный зал</a>
+          <a href="bazar.html">Bazar · стритфуд</a>
+        </div>
+      </div>
     </nav>
-    <button class="burger" aria-label="Меню">☰</button>
   </header>
 
   <!-- Плашки ресторанов: слайдер на десктопе, столбик на мобильном -->
@@ -56,7 +61,7 @@
       <a href="bazar.html" class="tile tile--bazar">
         <div class="tile__bg" style="--img: repeating-linear-gradient(0deg, rgba(255,255,255,.4) 0 1px, transparent 1px 110px), repeating-linear-gradient(90deg, rgba(255,255,255,.4) 0 1px, transparent 1px 110px), linear-gradient(#C71B0F, #C71B0F)"></div>
         <div class="tile__content">
-          <div class="tile__city">Санкт-Петербург · shawarma spot</div>
+          <div class="tile__city">Санкт-Петербург · стритфуд</div>
           <h2 class="tile__name tile__name--brush">BAZAR</h2>
           <span class="tile__more">Перейти</span>
         </div>
@@ -77,8 +82,9 @@
         <h2 class="h2">Вакансии</h2>
       </div>
       <div class="text">
+        <p class="vac-lead">Если вы хотите работать с нами в команде — будем рады знакомству!</p>
         <p class="muted">Мы ищем поваров, официантов, барменов и хостес, которые любят гостей так же, как мы. Опыт приветствуется, но главное — желание расти вместе с семьёй ресторанов.</p>
-        <a href="mailto:job@famiglia.example" class="btn btn--dark">Отправить резюме</a>
+        <a href="tel:+79219547503" class="btn btn--dark">Позвонить: +7 (921) 954-75-03</a>
       </div>
     </div>
   </section>
@@ -99,14 +105,14 @@
           <h4><a href="provence.html" class="footer__title">Provence <span>→</span></a></h4>
           <p>Банкетный ресторан · Санкт-Петербург</p>
           <p>ул. Моисеенко, 8/1</p>
-          <p class="footer__phone"><a href="tel:+79219966517">+7 (921) 996-65-17</a></p>
+          <p class="footer__phone"><a href="tel:+79219547503">+7 (921) 954-75-03</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Telegram-канал Provence</a></p>
           <p><a href="https://instagram.com/banketniy_zal" target="_blank" rel="noopener">@banketniy_zal<sup>*</sup></a></p>
         </div>
         <div>
           <h4><a href="bazar.html" class="footer__title">Bazar <span>→</span></a></h4>
-          <p>Shawarma spot · Санкт-Петербург</p>
-          <p>ул. Моисеенко, 8/1А</p>
-          <p>вход левее главного входа в Provence</p>
+          <p>Стритфуд · Санкт-Петербург</p>
+          <p>Дегтярный пер., 1/8</p>
           <p><a href="https://instagram.com/bazar.piter" target="_blank" rel="noopener">@bazar.piter<sup>*</sup></a></p>
         </div>
         <div>
@@ -117,18 +123,20 @@
           <p><a href="https://instagram.com/vita_lika" target="_blank" rel="noopener">@vita_lika<sup>*</sup></a></p>
           <p class="footer__gap"><a href="https://vk.ru/provencebanket" target="_blank" rel="noopener">ВК: provencebanket</a></p>
           <p><a href="https://vk.ru/dvorec_brakosochetaniya_furshet" target="_blank" rel="noopener">ВК: dvorec_brakosochetaniya_furshet</a></p>
+          <p><a href="#" target="_blank" rel="noopener">ВК: Вита Банкетова</a></p>
+          <p><a href="#" target="_blank" rel="noopener">Telegram-канал Provence</a></p>
         </div>
       </div>
       <div class="footer__bottom">
         <span>© 2026 · ООО «Альтис» · ИП Ковалева Виталика Владимировна</span>
-        <a href="#">Политика конфиденциальности</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
       </div>
       <p class="footer__note">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ.</p>
     </div>
   </footer>
 
   <div class="cookie">
-    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="#">обработкой персональных данных</a>.</span>
+    <span>Используем файлы cookie для аналитики и правильной работы сайта. Оставаясь на сайте, вы соглашаетесь с <a href="privacy.html">обработкой персональных данных</a>.</span>
     <button class="btn btn--dark">Соглашаюсь</button>
   </div>
 
